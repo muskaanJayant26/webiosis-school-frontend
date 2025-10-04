@@ -11,23 +11,23 @@ export const Header = ({ onEnquireClick }: { onEnquireClick: () => void }) => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <span className="text-2xl lg:text-3xl font-bold bg-gradient-hero bg-clip-text text-transparent">
+            <a href="/" className="text-2xl lg:text-3xl font-bold bg-gradient-hero bg-clip-text text-transparent">
               EduTransform
-            </span>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            <a href="#parents" className="text-foreground hover:text-primary font-medium transition-colors">
+            <a href="/parents" className="text-foreground hover:text-primary font-medium transition-colors">
               PARENTS
             </a>
-            <a href="#schools" className="text-foreground hover:text-primary font-medium transition-colors">
+            <a href="/schools" className="text-foreground hover:text-primary font-medium transition-colors">
               SCHOOLS
             </a>
-            <a href="#teachers" className="text-foreground hover:text-primary font-medium transition-colors">
+            <a href="/teachers" className="text-foreground hover:text-primary font-medium transition-colors">
               TEACHERS
             </a>
-            <a href="#about" className="text-foreground hover:text-primary font-medium transition-colors">
+            <a href="/about" className="text-foreground hover:text-primary font-medium transition-colors">
               ABOUT US
             </a>
           </nav>
@@ -53,28 +53,28 @@ export const Header = ({ onEnquireClick }: { onEnquireClick: () => void }) => {
           <div className="lg:hidden py-4 border-t border-border animate-fade-in">
             <nav className="flex flex-col gap-4">
               <a
-                href="#parents"
+                href="/parents"
                 className="text-foreground hover:text-primary font-medium transition-colors py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 PARENTS
               </a>
               <a
-                href="#schools"
+                href="/schools"
                 className="text-foreground hover:text-primary font-medium transition-colors py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 SCHOOLS
               </a>
               <a
-                href="#teachers"
+                href="/teachers"
                 className="text-foreground hover:text-primary font-medium transition-colors py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 TEACHERS
               </a>
               <a
-                href="#about"
+                href="/about"
                 className="text-foreground hover:text-primary font-medium transition-colors py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
