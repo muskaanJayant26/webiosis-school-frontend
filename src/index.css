@@ -104,11 +104,11 @@ All colors MUST be HSL.
   }
 
   a:not(.no-underline):after {
-    @apply content-[''] absolute w-full scale-x-0 h-0.5 bottom-0 left-0 bg-current origin-bottom-right transition-transform duration-300;
+    @apply content-[''] absolute w-full scale-x-0 h-0.5 bottom-0 left-0 bg-current origin-center transition-transform duration-300;
   }
 
   a:not(.no-underline):hover:after {
-    @apply scale-x-100 origin-bottom-left;
+    @apply scale-x-100 origin-center;
   }
 
   @keyframes fadeIn {

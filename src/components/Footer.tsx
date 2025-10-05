@@ -83,7 +83,7 @@ export const Footer = () => {
                   <li key={linkIndex}>
                     <a
                       href="#"
-                      className="text-white hover:text-white transition-all inline-block relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-white after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+                      className="text-white hover:text-white transition-all inline-block relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-white after:origin-center after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-center"
                     >
                       {link}
                     </a>
