@@ -7,6 +7,9 @@ import { TeacherProgramSection } from "@/components/TeacherProgramSection";
 import { SchoolUpgradeSection } from "@/components/SchoolUpgradeSection";
 import { TransformSection } from "@/components/TransformSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { WhyChooseSection } from "@/components/WhyChooseSection";
+import { ProgramsSection } from "@/components/ProgramsSection";
+import { FAQSection } from "@/components/FAQSection";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
@@ -23,11 +26,14 @@ const Index = () => {
         <HeroSection />
       </div>
       <StatsSection />
+      <WhyChooseSection />
       <ConfidenceSection />
+      <ProgramsSection />
       <TeacherProgramSection />
       <SchoolUpgradeSection />
       <TransformSection />
       <TestimonialsSection />
+      <FAQSection />
       <Footer />
     </div>
   );

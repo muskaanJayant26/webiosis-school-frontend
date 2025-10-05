@@ -184,6 +184,236 @@ const Parents = () => {
         </div>
       </section>
 
+      {/* Learning Features */}
+      <section className="py-20 bg-gradient-subtle">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              How Your Child Learns Better
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Multi-dimensional learning approach for deeper understanding
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                title: "Textbook-Based Learning",
+                description:
+                  "Strong foundation with NCERT-aligned textbooks and comprehensive study materials for conceptual clarity.",
+                percentage: "40%",
+              },
+              {
+                title: "Audio-Visual Content",
+                description:
+                  "Engaging videos, animations, and interactive content that make learning fun and memorable.",
+                percentage: "30%",
+              },
+              {
+                title: "Activity-Based Learning",
+                description:
+                  "Hands-on experiments, projects, and practical activities for experiential learning and skill development.",
+                percentage: "30%",
+              },
+            ].map((method, index) => (
+              <Card key={index} className="p-6 text-center hover:shadow-glow transition-all">
+                <div className="text-5xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
+                  {method.percentage}
+                </div>
+                <h3 className="text-xl font-bold mb-3">{method.title}</h3>
+                <p className="text-muted-foreground">{method.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Student App Features */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+                Student Learning App Features
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Empower your child's learning journey with our comprehensive mobile app
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  title: "Video Lessons",
+                  description: "Access thousands of engaging video lessons anytime, anywhere",
+                },
+                {
+                  title: "Practice Tests",
+                  description: "Regular assessments to track progress and identify areas for improvement",
+                },
+                {
+                  title: "Homework Help",
+                  description: "Step-by-step solutions and explanations for all homework questions",
+                },
+                {
+                  title: "Live Doubt Solving",
+                  description: "Connect with teachers for real-time doubt clarification",
+                },
+                {
+                  title: "Progress Reports",
+                  description: "Detailed analytics and insights on your child's learning journey",
+                },
+                {
+                  title: "Parent Dashboard",
+                  description: "Monitor attendance, assignments, and academic performance",
+                },
+                {
+                  title: "Learning Games",
+                  description: "Gamified learning activities that make education fun",
+                },
+                {
+                  title: "Offline Access",
+                  description: "Download content for learning without internet connectivity",
+                },
+              ].map((feature, index) => (
+                <Card
+                  key={index}
+                  className="p-5 hover:shadow-soft transition-all animate-slide-up"
+                  style={{ animationDelay: `${index * 0.05}s` }}
+                >
+                  <h3 className="font-bold mb-2 text-primary">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground">{feature.description}</p>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Safety & Support */}
+      <section className="py-20 bg-gradient-subtle">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+                Your Child's Safety & Well-being is Our Priority
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  title: "Safe Learning Environment",
+                  points: [
+                    "CCTV monitored premises",
+                    "Background-verified staff",
+                    "Strict safety protocols",
+                    "Emergency response systems",
+                  ],
+                },
+                {
+                  title: "Mental & Emotional Support",
+                  points: [
+                    "Professional counselors available",
+                    "Anti-bullying programs",
+                    "Stress management workshops",
+                    "Parent counseling sessions",
+                  ],
+                },
+                {
+                  title: "Health & Hygiene",
+                  points: [
+                    "Regular health checkups",
+                    "Nutritious meal programs",
+                    "Clean and sanitized facilities",
+                    "First aid trained staff",
+                  ],
+                },
+                {
+                  title: "Continuous Communication",
+                  points: [
+                    "Regular parent-teacher meetings",
+                    "24/7 app notifications",
+                    "Emergency contact system",
+                    "Monthly progress reports",
+                  ],
+                },
+              ].map((section, index) => (
+                <Card key={index} className="p-6 hover:shadow-soft transition-all">
+                  <h3 className="text-xl font-bold mb-4 text-primary">{section.title}</h3>
+                  <ul className="space-y-2">
+                    {section.points.map((point, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-muted-foreground">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* More Testimonials */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Success Stories From Parents
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Real experiences from families who chose EduTransform
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                name: "Mr. & Mrs. Verma",
+                location: "Pune",
+                content:
+                  "Our twin daughters were struggling with math. The personalized attention and innovative teaching methods at EduTransform have made them confident learners. They actually enjoy studying now!",
+              },
+              {
+                name: "Mrs. Radhika Nair",
+                location: "Chennai",
+                content:
+                  "The student app is a game-changer. I can see what my son is learning, track his assignments, and even help him with homework using the video lessons. Complete transparency!",
+              },
+              {
+                name: "Mr. Karthik Reddy",
+                location: "Hyderabad",
+                content:
+                  "My daughter participated in a national science competition through EduTransform and won second place. The exposure and confidence she gained is priceless.",
+              },
+              {
+                name: "Mrs. Lakshmi Iyer",
+                location: "Bangalore",
+                content:
+                  "The holistic approach is what attracted us. My son is not just academically strong but also participates in music, sports, and leadership programs. Truly well-rounded development.",
+              },
+            ].map((testimonial, index) => (
+              <Card key={index} className="p-6 hover:shadow-soft transition-all">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-secondary text-secondary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-4 italic leading-relaxed">
+                  "{testimonial.content}"
+                </p>
+                <div className="border-t pt-4">
+                  <p className="font-bold">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

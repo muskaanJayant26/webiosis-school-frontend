@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Target, Heart, Zap, Globe, Users, TrendingUp } from "lucide-react";
+import { Target, Heart, Zap, Globe, Users, TrendingUp, Award, BookOpen } from "lucide-react";
 
 const AboutUs = () => {
   const scrollToForm = () => {
@@ -253,6 +253,195 @@ const AboutUs = () => {
                 <p className="text-sm text-muted-foreground">{member.description}</p>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Awards & Recognition */}
+      <section className="py-20 bg-gradient-subtle">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Awards & Recognition
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Honored for excellence in education innovation
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                year: "2024",
+                award: "EdTech Company of the Year",
+                organization: "National Education Awards",
+              },
+              {
+                year: "2023",
+                award: "Innovation in Learning",
+                organization: "Ministry of Education",
+              },
+              {
+                year: "2022",
+                award: "Best Teacher Training Program",
+                organization: "Indian Education Summit",
+              },
+              {
+                year: "2021",
+                award: "Technology Excellence Award",
+                organization: "EdTech India",
+              },
+            ].map((award, index) => (
+              <Card
+                key={index}
+                className="p-6 text-center hover:shadow-soft transition-all animate-slide-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="w-16 h-16 rounded-full bg-gradient-accent flex items-center justify-center mx-auto mb-4">
+                  <Award className="h-8 w-8 text-accent-foreground" />
+                </div>
+                <div className="text-3xl font-bold text-primary mb-2">{award.year}</div>
+                <h3 className="font-bold mb-2">{award.award}</h3>
+                <p className="text-sm text-muted-foreground">{award.organization}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Approach */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+                Our Approach to Education Transformation
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                A comprehensive methodology that delivers consistent results
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Research-Backed",
+                  description:
+                    "Our curriculum and methods are based on extensive educational research and proven pedagogical frameworks.",
+                  icon: BookOpen,
+                },
+                {
+                  title: "Technology-Enabled",
+                  description:
+                    "Leveraging cutting-edge technology to enhance learning while maintaining the human touch in education.",
+                  icon: Zap,
+                },
+                {
+                  title: "Locally Relevant",
+                  description:
+                    "While maintaining international standards, we ensure content is culturally relevant and contextual to India.",
+                  icon: Globe,
+                },
+              ].map((approach, index) => (
+                <Card
+                  key={index}
+                  className="p-6 hover:shadow-soft transition-all text-center animate-fade-in"
+                  style={{ animationDelay: `${index * 0.15}s` }}
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-hero flex items-center justify-center mx-auto mb-4">
+                    <approach.icon className="h-8 w-8 text-primary-foreground" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">{approach.title}</h3>
+                  <p className="text-muted-foreground">{approach.description}</p>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Impact */}
+      <section className="py-20 bg-gradient-subtle">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+                Creating Social Impact
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Beyond business, we're committed to transforming lives
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="p-8 hover:shadow-soft transition-all">
+                <h3 className="text-2xl font-bold mb-4 text-primary">
+                  Rural Education Initiative
+                </h3>
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  We've partnered with 2,000+ schools in rural and semi-urban areas, bringing quality education to underserved communities. Our subsidized programs ensure that every child, regardless of location, has access to world-class learning resources.
+                </p>
+                <div className="grid grid-cols-2 gap-4 mt-6">
+                  <div className="text-center p-4 bg-gradient-subtle rounded-lg">
+                    <div className="text-3xl font-bold text-primary mb-1">2,000+</div>
+                    <p className="text-sm text-muted-foreground">Rural Schools</p>
+                  </div>
+                  <div className="text-center p-4 bg-gradient-subtle rounded-lg">
+                    <div className="text-3xl font-bold text-primary mb-1">500K+</div>
+                    <p className="text-sm text-muted-foreground">Rural Students</p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-8 hover:shadow-soft transition-all">
+                <h3 className="text-2xl font-bold mb-4 text-primary">
+                  Teacher Scholarship Program
+                </h3>
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  We provide free training and certifications to teachers from economically disadvantaged schools. Our scholarship program has trained 10,000+ teachers at no cost, empowering them with skills to transform their classrooms.
+                </p>
+                <div className="grid grid-cols-2 gap-4 mt-6">
+                  <div className="text-center p-4 bg-gradient-subtle rounded-lg">
+                    <div className="text-3xl font-bold text-primary mb-1">10,000+</div>
+                    <p className="text-sm text-muted-foreground">Scholarship Recipients</p>
+                  </div>
+                  <div className="text-center p-4 bg-gradient-subtle rounded-lg">
+                    <div className="text-3xl font-bold text-primary mb-1">₹5Cr+</div>
+                    <p className="text-sm text-muted-foreground">Investment in CSR</p>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Future Vision */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+              Our Vision for the Future
+            </h2>
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              By 2030, we aim to impact 10 million students across 20,000 schools, making quality education accessible to every child in India. We're investing in AI-powered personalized learning, immersive VR/AR experiences, and expanding our reach to international markets.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { goal: "20,000", label: "Partner Schools" },
+                { goal: "10M", label: "Students Impacted" },
+                { goal: "500+", label: "Cities Covered" },
+              ].map((vision, index) => (
+                <div
+                  key={index}
+                  className="p-6 rounded-xl bg-gradient-hero text-primary-foreground animate-slide-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="text-4xl font-bold mb-2">{vision.goal}</div>
+                  <p className="text-primary-foreground/90">{vision.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
