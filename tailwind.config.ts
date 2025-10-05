@@ -57,6 +57,8 @@ export default {
       boxShadow: {
         'soft': 'var(--shadow-soft)',
         'glow': 'var(--shadow-glow)',
+        'button': 'var(--shadow-button)',
+        'button-hover': 'var(--shadow-button-hover)',
       },
       borderRadius: {
         lg: "var(--radius)",
