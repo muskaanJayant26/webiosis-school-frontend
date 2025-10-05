@@ -9,14 +9,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground shadow-button hover:bg-primary-glow hover:shadow-button-hover",
-        destructive: "bg-destructive text-destructive-foreground shadow-button hover:bg-destructive/80 hover:shadow-button-hover",
+        default: "bg-primary text-primary-foreground shadow-button hover:bg-primary/80 hover:brightness-110 hover:shadow-button-hover",
+        destructive: "bg-destructive text-destructive-foreground shadow-button hover:bg-destructive/70 hover:shadow-button-hover",
         outline: "border-2 border-primary bg-transparent text-primary shadow-button hover:bg-primary hover:text-primary-foreground hover:shadow-button-hover",
-        secondary: "bg-secondary text-secondary-foreground shadow-button hover:bg-accent hover:shadow-button-hover",
-        ghost: "hover:bg-muted hover:text-foreground hover:shadow-soft",
-        link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-hero text-primary-foreground shadow-glow hover:shadow-button-hover transform hover:scale-105",
-        accent: "bg-gradient-accent text-accent-foreground shadow-button hover:bg-secondary hover:shadow-button-hover transform hover:scale-105",
+        secondary: "bg-secondary text-secondary-foreground shadow-button hover:bg-secondary/80 hover:brightness-110 hover:shadow-button-hover",
+        ghost: "hover:bg-accent/20 hover:text-foreground hover:shadow-soft",
+        link: "text-primary underline-offset-4 hover:underline hover:text-primary-glow",
+        hero: "bg-gradient-hero text-primary-foreground shadow-glow hover:brightness-110 hover:shadow-button-hover transform hover:scale-105",
+        accent: "bg-gradient-accent text-accent-foreground shadow-button hover:brightness-110 hover:shadow-button-hover transform hover:scale-105",
       },
       size: {
         default: "h-11 px-6 py-3",
