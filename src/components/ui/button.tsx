@@ -9,14 +9,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground shadow-button hover:bg-white hover:text-black hover:shadow-green",
-        destructive: "bg-destructive text-destructive-foreground shadow-button hover:bg-white hover:text-black hover:shadow-green",
-        outline: "border-2 border-primary bg-transparent text-primary shadow-button hover:bg-white hover:text-black hover:shadow-green",
-        secondary: "bg-secondary text-secondary-foreground shadow-button hover:bg-white hover:text-black hover:shadow-green",
-        ghost: "hover:bg-white hover:text-black hover:shadow-green",
+        default: "bg-primary text-primary-foreground shadow-button hover:!bg-white hover:!text-black hover:shadow-green",
+        destructive: "bg-destructive text-destructive-foreground shadow-button hover:!bg-white hover:!text-black hover:shadow-green",
+        outline: "border-2 border-primary bg-transparent text-primary shadow-button hover:!bg-white hover:!text-black hover:shadow-green",
+        secondary: "bg-secondary text-secondary-foreground shadow-button hover:!bg-white hover:!text-black hover:shadow-green",
+        ghost: "hover:!bg-white hover:!text-black hover:shadow-green",
         link: "text-primary underline-offset-4 hover:underline hover:text-primary-glow",
-        hero: "bg-gradient-hero text-primary-foreground shadow-glow hover:bg-white hover:text-black hover:shadow-green transform hover:scale-105",
-        accent: "bg-gradient-accent text-accent-foreground shadow-button hover:bg-white hover:text-black hover:shadow-green transform hover:scale-105",
+        hero: "bg-gradient-hero text-primary-foreground shadow-glow hover:!bg-white hover:!text-black hover:shadow-green transform hover:scale-105",
+        accent: "bg-gradient-accent text-accent-foreground shadow-button hover:!bg-white hover:!text-black hover:shadow-green transform hover:scale-105",
       },
       size: {
         default: "h-11 px-6 py-3",
