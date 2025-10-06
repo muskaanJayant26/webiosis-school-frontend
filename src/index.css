@@ -47,6 +47,7 @@ All colors MUST be HSL.
     --shadow-glow: 0 0 40px hsl(48 96% 77% / 0.4);
     --shadow-button: 0 4px 14px -2px hsl(142 76% 36% / 0.4);
     --shadow-button-hover: 0 6px 20px -2px hsl(142 76% 46% / 0.5);
+    --shadow-green: 0 8px 24px hsl(142 76% 36% / 0.6);
   }
 
   .dark {
