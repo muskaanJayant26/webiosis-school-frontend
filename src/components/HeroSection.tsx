@@ -65,7 +65,7 @@ export const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center py-12 lg:py-20">
           {/* Left Content */}
           <div className="text-primary-foreground animate-slide-up">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-3xl lg:text-3xl font-bold mb-6 leading-tight">
               Transform Your School with Future-Ready Learning Solutions
             </h1>
             <p className="text-lg sm:text-xl mb-8 text-primary-foreground/90">
@@ -197,7 +197,7 @@ export const HeroSection = () => {
                 </Select>
               </div>
 
-              <div className="flex items-start gap-2">
+              {/* <div className="flex items-start gap-2">
                 <Checkbox id="consent" />
                 <Label htmlFor="consent" className="text-sm leading-tight cursor-pointer">
                   I agree to receive communications by WhatsApp / SMS / RCS
@@ -206,7 +206,7 @@ export const HeroSection = () => {
 
               <p className="text-xs text-muted-foreground">
                 By submitting, I agree to EduTransform's Privacy Policy.
-              </p>
+              </p> */}
 
               <Button type="submit" variant="accent" size="lg" className="w-full">
                 Submit

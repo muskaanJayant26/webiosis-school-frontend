@@ -31,10 +31,10 @@ export const TransformSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-subtle">
+    <section className="py-10 bg-gradient-subtle">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 animate-slide-up max-w-5xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-3xl lg:text-3xl font-bold mb-6 leading-tight">
             EduTransform School System transforms your school by upgrading the
             experience of every stakeholder in your school through our
             revolutionary digital education solution.
