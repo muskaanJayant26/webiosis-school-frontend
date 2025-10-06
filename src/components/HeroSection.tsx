@@ -10,19 +10,52 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import heroImage from "@/assets/hero-bg.jpg";
 import { CheckCircle2 } from "lucide-react";
+import { useState, useEffect } from "react";
+import schoolBg1 from "@/assets/school-bg-1.jpg";
+import schoolBg2 from "@/assets/school-bg-2.jpg";
+import schoolBg3 from "@/assets/school-bg-3.jpg";
+import schoolBg4 from "@/assets/school-bg-4.jpg";
+import schoolBg5 from "@/assets/school-bg-5.jpg";
+import schoolBg6 from "@/assets/school-bg-6.jpg";
+import schoolBg7 from "@/assets/school-bg-7.jpg";
+import schoolBg8 from "@/assets/school-bg-8.jpg";
+import schoolBg9 from "@/assets/school-bg-9.jpg";
+import schoolBg10 from "@/assets/school-bg-10.jpg";
+import schoolBg11 from "@/assets/school-bg-11.jpg";
+import schoolBg12 from "@/assets/school-bg-12.jpg";
+import schoolBg13 from "@/assets/school-bg-13.jpg";
+import schoolBg14 from "@/assets/school-bg-14.jpg";
+import schoolBg15 from "@/assets/school-bg-15.jpg";
+
+
+const backgroundImages = [
+  schoolBg1, schoolBg2, schoolBg3, schoolBg4, schoolBg5,
+  schoolBg6, schoolBg7, schoolBg8, schoolBg9, schoolBg10,
+  schoolBg11, schoolBg12, schoolBg13, schoolBg14, schoolBg15
+];
 
 export const HeroSection = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-screen pt-16 lg:pt-20 overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 transition-all duration-1000 ease-in-out"
         style={{
-          backgroundImage: `url(${heroImage})`,
+          backgroundImage: `url(${backgroundImages[currentImageIndex]})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+          filter: 'blur(3px)',
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/90 to-primary/70"></div>
