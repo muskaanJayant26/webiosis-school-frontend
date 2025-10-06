@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
+    --background: 55 91% 95%;
     --foreground: 213 33% 17%;
 
     --card: 0 0% 100%;
@@ -17,36 +17,36 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 213 33% 17%;
 
-    --primary: 217 71% 40%;
+    --primary: 142 76% 36%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 217 71% 50%;
+    --primary-glow: 142 76% 46%;
 
-    --secondary: 48 95% 53%;
-    --secondary-foreground: 213 33% 17%;
+    --secondary: 25 95% 53%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 30% 92%;
+    --muted: 55 70% 88%;
     --muted-foreground: 213 20% 45%;
 
-    --accent: 199 92% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 48 96% 77%;
+    --accent-foreground: 213 33% 17%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 30% 88%;
-    --input: 210 30% 88%;
-    --ring: 217 71% 40%;
+    --border: 55 60% 85%;
+    --input: 55 60% 85%;
+    --ring: 142 76% 36%;
 
     --radius: 0.75rem;
 
-    --gradient-hero: linear-gradient(135deg, hsl(217 71% 40%), hsl(217 71% 50%));
-    --gradient-accent: linear-gradient(135deg, hsl(48 95% 53%), hsl(48 95% 63%));
-    --gradient-subtle: linear-gradient(180deg, hsl(210 40% 98%), hsl(210 40% 96%));
+    --gradient-hero: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
+    --gradient-accent: linear-gradient(135deg, hsl(25 95% 53%), hsl(25 95% 63%));
+    --gradient-subtle: linear-gradient(180deg, hsl(55 91% 95%), hsl(55 80% 92%));
     
     --shadow-soft: 0 4px 20px -4px hsl(213 33% 17% / 0.08);
-    --shadow-glow: 0 0 40px hsl(199 92% 60% / 0.3);
-    --shadow-button: 0 4px 14px -2px hsl(217 71% 40% / 0.4);
-    --shadow-button-hover: 0 6px 20px -2px hsl(199 92% 60% / 0.5);
+    --shadow-glow: 0 0 40px hsl(48 96% 77% / 0.4);
+    --shadow-button: 0 4px 14px -2px hsl(142 76% 36% / 0.4);
+    --shadow-button-hover: 0 6px 20px -2px hsl(142 76% 46% / 0.5);
   }
 
   .dark {
@@ -59,24 +59,24 @@ All colors MUST be HSL.
     --popover: 213 33% 16%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 217 71% 50%;
+    --primary: 142 76% 46%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 48 95% 53%;
-    --secondary-foreground: 213 33% 17%;
+    --secondary: 25 95% 53%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 213 30% 22%;
     --muted-foreground: 213 20% 65%;
 
-    --accent: 199 92% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 48 96% 77%;
+    --accent-foreground: 213 33% 17%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 213 30% 22%;
     --input: 213 30% 22%;
-    --ring: 217 71% 50%;
+    --ring: 142 76% 46%;
   }
 }
 
