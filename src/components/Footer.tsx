@@ -52,7 +52,7 @@ export const Footer = () => {
 
   return (
     <footer className="bg-gradient-hero text-primary-foreground">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
           {/* Logo Section */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
@@ -62,16 +62,16 @@ export const Footer = () => {
               Learning Solutions
             </p>
             <div className="flex gap-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className="w-10 h-10 rounded-full bg-primary-foreground/20 hover:bg-primary-foreground/30 flex items-center justify-center transition-colors"
-                >
-                  <social.icon className="h-5 w-5" />
-                </a>
-              ))}
-            </div>
+  {socialLinks.map((social, index) => (
+    <div
+      className="rounded-full flex items-center justify-center 
+                 transition-transform duration-300 hover:scale-110"
+    >
+      <social.icon className="h-5 w-5" />
+    </div>
+  ))}
+</div>
+
           </div>
 
           {/* Footer Links */}
@@ -94,7 +94,7 @@ export const Footer = () => {
           ))}
         </div>
 
-        <div className="border-t border-primary-foreground/20 pt-8 text-center">
+        <div className="border-t border-primary-foreground/20 pt-4 text-center">
           <p className="text-primary-foreground/80">
             © 2025 EduTransform. All rights reserved.
           </p>
