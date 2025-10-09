@@ -64,34 +64,63 @@ export const HeroSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center py-12 lg:py-20">
           {/* Left Content */}
-          <div className="text-primary-foreground animate-slide-up">
-            <h1 className="text-3xl sm:text-3xl lg:text-3xl font-bold mb-6 leading-tight">
-              Transform Your School with Future-Ready Learning Solutions
-            </h1>
-            <p className="text-lg sm:text-xl mb-8 text-primary-foreground/90">
-              EduTransform School System builds confidence in your students through
-            </p>
-            <ul className="space-y-4 mb-8">
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="h-6 w-6 mt-1 flex-shrink-0" />
-                <span className="text-base sm:text-lg">
-                  <strong>Unmatched Curriculum & At-home</strong> Support For Your Students
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="h-6 w-6 mt-1 flex-shrink-0" />
-                <span className="text-base sm:text-lg">
-                  <strong>Super Teacher Program For</strong> Your Teachers
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="h-6 w-6 mt-1 flex-shrink-0" />
-                <span className="text-base sm:text-lg">
-                  <strong>Cutting-edge Infrastructure</strong> Upgrades For Your School
-                </span>
-              </li>
-            </ul>
-          </div>
+          {/* Left Content */}
+<div className="text-primary-foreground animate-slide-up">
+  <div className="inline-block bg-accent/20 text-accent px-4 py-1 rounded-full text-sm font-semibold mb-4">
+    Trusted by 500+ Schools Across India
+  </div>
+
+  <h1 className="text-3xl sm:text-4xl lg:text-4xl font-bold mb-6 leading-tight">
+    Transform Your School with <span className="text-accent">Future-Ready Learning Solutions</span>
+  </h1>
+
+  <p className="text-lg sm:text-xl mb-8 text-primary-foreground/90">
+    EduTransform empowers your school community with cutting-edge technology, 
+    holistic learning modules, and training programs built for 21st-century success.
+  </p>
+
+  <ul className="space-y-4 mb-8">
+    <li className="flex items-start gap-3">
+      <CheckCircle2 className="h-6 w-6 mt-1 flex-shrink-0 text-accent" />
+      <span className="text-base sm:text-lg">
+        <strong>Unmatched Curriculum</strong> & Personalized At-home Learning Support
+      </span>
+    </li>
+    <li className="flex items-start gap-3">
+      <CheckCircle2 className="h-6 w-6 mt-1 flex-shrink-0 text-accent" />
+      <span className="text-base sm:text-lg">
+        <strong>Super Teacher Program</strong> for Empowering Educators
+      </span>
+    </li>
+    <li className="flex items-start gap-3">
+      <CheckCircle2 className="h-6 w-6 mt-1 flex-shrink-0 text-accent" />
+      <span className="text-base sm:text-lg">
+        <strong>AI-enabled Infrastructure</strong> & Digital Classroom Solutions
+      </span>
+    </li>
+    <li className="flex items-start gap-3">
+      <CheckCircle2 className="h-6 w-6 mt-1 flex-shrink-0 text-accent" />
+      <span className="text-base sm:text-lg">
+        <strong>Parent Engagement Tools</strong> for Stronger School-Home Connection
+      </span>
+    </li>
+    <li className="flex items-start gap-3">
+      <CheckCircle2 className="h-6 w-6 mt-1 flex-shrink-0 text-accent" />
+      <span className="text-base sm:text-lg">
+        <strong>Smart Analytics Dashboard</strong> for Data-driven Decision Making
+      </span>
+    </li>
+  </ul>
+
+  <div className="flex flex-col sm:flex-row gap-4">
+    <Button variant="accent" size="lg" className="font-semibold">
+      Get Free Demo
+    </Button>
+    <Button variant="outline" size="lg" className="font-semibold text-accent border-accent hover:bg-accent/10">
+      Explore Curriculum
+    </Button>
+  </div>
+</div>
 
           {/* Right Form */}
           <Card className="p-6 sm:p-8 shadow-glow bg-card/95 backdrop-blur-sm animate-fade-in">

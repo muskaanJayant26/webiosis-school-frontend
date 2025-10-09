@@ -1,14 +1,45 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import studentsImage from "@/assets/students-confidence.jpg";
-import { BookOpen, Smartphone, Trophy, Star, CheckCircle2 } from "lucide-react";
+import { BookOpen, Smartphone, Trophy, CheckCircle2 } from "lucide-react";
+"use client";
+import { useState, useEffect, useRef } from "react";
+import { Card } from "@/components/ui/card";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const Parents = () => {
   const scrollToForm = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const testimonials = [
+    {
+      name: "Mr. & Mrs. Verma",
+      location: "Pune",
+      content:
+        "Our twin daughters were struggling with math. The personalized attention and innovative teaching methods at EduTransform have made them confident learners. They actually enjoy studying now!",
+    },
+    {
+      name: "Mrs. Radhika Nair",
+      location: "Chennai",
+      content:
+        "The student app is a game-changer. I can see what my son is learning, track his assignments, and even help him with homework using the video lessons. Complete transparency!",
+    },
+    {
+      name: "Mr. Karthik Reddy",
+      location: "Hyderabad",
+      content:
+        "My daughter participated in a national science competition through EduTransform and won second place. The exposure and confidence she gained is priceless.",
+    },
+    {
+      name: "Mrs. Lakshmi Iyer",
+      location: "Bangalore",
+      content:
+        "The holistic approach is what attracted us. My son is not just academically strong but also participates in music, sports, and leadership programs. Truly well-rounded development.",
+    },
+  ];
+
 
   const features = [
     {
@@ -46,6 +77,31 @@ const Parents = () => {
     "Affordable fee structure with excellent value",
   ];
 
+   const [currentIndex, setCurrentIndex] = useState(0);
+  const timeoutRef = useRef(null);
+
+  const resetTimeout = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+  };
+
+  useEffect(() => {
+    resetTimeout();
+    timeoutRef.current = setTimeout(() => {
+      handleNext();
+    }, 5000); // auto-slide every 5 seconds
+    return () => resetTimeout();
+  }, [currentIndex]);
+
+  const handlePrev = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+  };
+
   return (
     <div className="min-h-screen">
       <Header onEnquireClick={scrollToForm} />
@@ -54,7 +110,7 @@ const Parents = () => {
       <section className="pt-32 pb-20 bg-gradient-hero text-primary-foreground">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center animate-slide-up">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl sm:text-4xl lg:text-5xl font-bold mb-6">
               Give Your Child The Best Education
             </h1>
             <p className="text-xl sm:text-2xl mb-8 text-primary-foreground/90">
@@ -68,7 +124,7 @@ const Parents = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-background">
+      <section className="py-10 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -102,7 +158,7 @@ const Parents = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gradient-subtle">
+      <section className="py-10 bg-gradient-subtle">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
@@ -136,8 +192,8 @@ const Parents = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-background">
+      {/* Testimonials
+      <section className="py-10 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -182,10 +238,10 @@ const Parents = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Learning Features */}
-      <section className="py-20 bg-gradient-subtle">
+      <section className="py-10 bg-gradient-subtle">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -230,7 +286,7 @@ const Parents = () => {
       </section>
 
       {/* Student App Features */}
-      <section className="py-20 bg-background">
+      <section className="py-10 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -292,7 +348,7 @@ const Parents = () => {
       </section>
 
       {/* Safety & Support */}
-      <section className="py-20 bg-gradient-subtle">
+      <section className="py-10 bg-gradient-subtle">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -357,62 +413,75 @@ const Parents = () => {
         </div>
       </section>
 
-      {/* More Testimonials */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Success Stories From Parents
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Real experiences from families who chose EduTransform
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {[
-              {
-                name: "Mr. & Mrs. Verma",
-                location: "Pune",
-                content:
-                  "Our twin daughters were struggling with math. The personalized attention and innovative teaching methods at EduTransform have made them confident learners. They actually enjoy studying now!",
-              },
-              {
-                name: "Mrs. Radhika Nair",
-                location: "Chennai",
-                content:
-                  "The student app is a game-changer. I can see what my son is learning, track his assignments, and even help him with homework using the video lessons. Complete transparency!",
-              },
-              {
-                name: "Mr. Karthik Reddy",
-                location: "Hyderabad",
-                content:
-                  "My daughter participated in a national science competition through EduTransform and won second place. The exposure and confidence she gained is priceless.",
-              },
-              {
-                name: "Mrs. Lakshmi Iyer",
-                location: "Bangalore",
-                content:
-                  "The holistic approach is what attracted us. My son is not just academically strong but also participates in music, sports, and leadership programs. Truly well-rounded development.",
-              },
-            ].map((testimonial, index) => (
-              <Card key={index} className="p-6 hover:shadow-soft transition-all">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-secondary text-secondary" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground mb-4 italic leading-relaxed">
-                  "{testimonial.content}"
-                </p>
-                <div className="border-t pt-4">
-                  <p className="font-bold">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.location}</p>
-                </div>
-              </Card>
+    <section className="py-16 bg-background relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
+        <div className="text-center mb-12 animate-slide-up">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            Success Stories From Parents
+          </h2>
+          <p className="text-xl text-muted-foreground">
+            Real experiences from families who chose EduTransform
+          </p>
+        </div>
+
+        {/* Carousel Wrapper */}
+        <div className="relative w-full max-w-4xl mx-auto overflow-hidden">
+          {/* Slides */}
+          <div
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{
+              transform: `translateX(-${currentIndex * 100}%)`,
+            }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="min-w-full px-4">
+                <Card className="p-8 text-center shadow-md hover:shadow-lg transition-all duration-500 bg-card/95 backdrop-blur-sm">
+                  <div className="flex justify-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-5 w-5 fill-secondary text-secondary"
+                      />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground mb-6 italic text-lg leading-relaxed">
+                    “{testimonial.content}”
+                  </p>
+                  <div className="border-t pt-4">
+                    <p className="font-bold text-foreground text-lg">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {testimonial.location}
+                    </p>
+                  </div>
+                </Card>
+              </div>
             ))}
           </div>
+
+          {/* Left Green Arrow */}
+          <button
+            onClick={handlePrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 p-2 z-10 hover:scale-110 transition-transform"
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft className="h-8 w-8 text-green-500 hover:text-green-600" />
+          </button>
+
+          {/* Right Green Arrow */}
+          <button
+            onClick={handleNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 p-2 z-10 hover:scale-110 transition-transform"
+            aria-label="Next testimonial"
+          >
+            <ChevronRight className="h-8 w-8 text-green-500 hover:text-green-600" />
+          </button>
         </div>
-      </section>
+      </div>
+    </section>
+
 
       <Footer />
     </div>

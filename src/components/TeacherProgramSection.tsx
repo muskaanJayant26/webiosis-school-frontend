@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import teacherImage from "@/assets/teacher-program.jpg";
+import teacherImage from "@/assets/hero15.png";
 import { ChevronLeft, ChevronRight, Users, Award, Smartphone, Package, Zap } from "lucide-react";
 
 export const TeacherProgramSection = () => {
@@ -52,7 +52,7 @@ export const TeacherProgramSection = () => {
     <section className="py-10 bg-gradient-subtle">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 animate-slide-up">
-          <h2 className="text-3xl sm:text-3xl lg:text-3xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-3xl lg:text-4xl font-bold mb-4">
             We empower your teachers with a{" "}
             <span className="bg-gradient-accent bg-clip-text text-transparent">
               SUPER TEACHER PROGRAM

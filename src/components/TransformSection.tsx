@@ -7,26 +7,34 @@ export const TransformSection = () => {
       icon: Users,
       title: "Students",
       features: [
-        "Unmatched Curriculum",
-        "At-Home Learning",
-        "National Exposure",
+        "Engaging, Skill-Based Curriculum",
+        "Personalized At-Home Learning Support",
+        "Gamified Assessments & AI Progress Tracker",
+        "National-Level Competitions & Events",
+        "Confidence & Leadership Development Programs",
       ],
     },
     {
       icon: GraduationCap,
       title: "Teachers",
       features: [
-        "EduTransform Teacher App",
-        "School Activity Kit",
-        "In-Person Teacher Training",
-        "EduTransform Academy",
-        "AI Assessment Builder - Jasper",
+        "EduTransform Teacher App for Smart Planning",
+        "Comprehensive Activity & Resource Kits",
+        "In-Person & Online Training Programs",
+        "EduTransform Academy for Continuous Growth",
+        "AI Tool 'Jasper' for Instant Assessment Creation",
       ],
     },
     {
       icon: Building2,
       title: "Schools",
-      features: ["Nucleus: Academic ERP", "Learning Infrastructure"],
+      features: [
+        "Nucleus: Smart Academic ERP for Daily Operations",
+        "Digital Classrooms & Modern Learning Infrastructure",
+        "School Branding & Parent Engagement Support",
+        "Data-Driven Insights for Smarter Decision-Making",
+        "Seamless Integration with EduTransform Ecosystem",
+      ],
     },
   ];
 
@@ -34,10 +42,11 @@ export const TransformSection = () => {
     <section className="py-10 bg-gradient-subtle">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 animate-slide-up max-w-5xl mx-auto">
-          <h2 className="text-3xl sm:text-3xl lg:text-3xl font-bold mb-6 leading-tight">
-            EduTransform School System transforms your school by upgrading the
-            experience of every stakeholder in your school through our
-            revolutionary digital education solution.
+          <h2 className="text-3xl sm:text-3xl lg:text-4xl font-bold mb-6 leading-tight">
+           Revolutionizing how schools 
+            <span className="bg-gradient-hero bg-clip-text text-transparent"> educate, connect, and inspire!
+            </span>
+         
           </h2>
         </div>
 
