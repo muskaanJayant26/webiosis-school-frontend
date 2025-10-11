@@ -88,6 +88,8 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    /* Prevent scrollbar from hiding when dropdowns/dialogs open */
+    scrollbar-gutter: stable;
   }
 }
 
