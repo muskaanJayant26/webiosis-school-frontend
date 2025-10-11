@@ -2,11 +2,12 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { EnquiryDialog } from "@/components/EnquiryDialog";
+import { EnquireNowForm } from "./EnquireNowForm";
 
 export const Header = ({ onEnquireClick }: { onEnquireClick: () => void }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
-
+  
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-soft">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,8 +41,8 @@ export const Header = ({ onEnquireClick }: { onEnquireClick: () => void }) => {
               ENQUIRE NOW
             </Button>
           </div>
-          
-          <EnquiryDialog open={dialogOpen} onOpenChange={setDialogOpen} formType="general" />
+       
+      
 
           {/* Mobile Menu Button */}
           <button
@@ -91,6 +92,9 @@ export const Header = ({ onEnquireClick }: { onEnquireClick: () => void }) => {
           </div>
         )}
       </div>
+         {
+            dialogOpen &&  <EnquireNowForm isOpen={dialogOpen} onClose={() => setDialogOpen(false)}/>
+          }
     </header>
   );
 };

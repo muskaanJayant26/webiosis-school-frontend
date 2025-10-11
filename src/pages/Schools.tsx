@@ -5,12 +5,15 @@ import { Footer } from "@/components/Footer";
 import teacherImage from "@/assets/hero20.png";
 import infrastructureImage from "@/assets/hero18.png";
 import { TrendingUp, Users, Award, Database, Zap, Building2, CheckCircle2 } from "lucide-react";
-
+import { useState } from "react";
+import { ScheduleDemoDialog } from "@/components/ScheduleDemo";
+import { GetStartedDialog } from "@/components/GetStartedDialog";
 const Schools = () => {
   const scrollToForm = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
+const [open, setOpen] = useState(false);
+ const [open2, setOpen2] = useState(false);
   const benefits = [
     {
       icon: TrendingUp,
@@ -97,9 +100,10 @@ const Schools = () => {
             <p className="text-xl sm:text-2xl mb-8 text-primary-foreground/90">
               Join 8,500+ schools that have revolutionized their education delivery with EduTransform
             </p>
-            <Button variant="secondary" size="lg" onClick={scrollToForm}>
+            <Button variant="secondary" size="lg" onClick={()=> setOpen(true)}>
               Schedule a Demo
             </Button>
+            <ScheduleDemoDialog isOpen={open} onClose={()  => setOpen(false)}/>
           </div>
         </div>
       </section>
@@ -303,9 +307,10 @@ const Schools = () => {
           <p className="text-xl mb-8 max-w-2xl mx-auto text-primary-foreground/90">
             Join thousands of schools that have already revolutionized their education delivery. Schedule a demo today!
           </p>
-          <Button variant="secondary" size="lg" onClick={scrollToForm}>
+          <Button variant="secondary" size="lg" onClick={() => setOpen2(true)}>
             Get Started Now
           </Button>
+          <GetStartedDialog isOpen={open2} onClose={() => setOpen2(false)} />
         </div>
       </section>
 

@@ -5,6 +5,8 @@ import { Footer } from "@/components/Footer";
 import teacherImage from "@/assets/hero21.png";
 import { Smartphone, Award, Users, BookOpen, Zap, Trophy, CheckCircle2,ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import { TeacherBenefitsDialog } from "@/components/TeacherBenefitsDialog";
+import { JoinTeachingCommunityDialog } from "@/components/JoinTeachingCommunityDialog";
 const Teachers = () => {
   const scrollToForm = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -127,7 +129,8 @@ const Teachers = () => {
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
   };
-
+const [open, setOpen] = useState(false);
+const [open2, setOpen2] = useState(false);
   return (
     <div className="min-h-screen">
       <Header onEnquireClick={scrollToForm} />
@@ -142,9 +145,10 @@ const Teachers = () => {
             <p className="text-xl sm:text-2xl mb-8 text-primary-foreground/90">
               Join 60,000+ teachers who have transformed their teaching with our comprehensive support system
             </p>
-            <Button variant="secondary" size="lg" onClick={scrollToForm}>
+            <Button variant="secondary" size="lg" onClick={() => setOpen(true)}>
               Explore Teacher Benefits
             </Button>
+            <TeacherBenefitsDialog isOpen={open} onClose={() => setOpen(false)} />
           </div>
         </div>
       </section>
@@ -217,9 +221,10 @@ const Teachers = () => {
                   </div>
                 ))}
               </div>
-              <Button variant="hero" size="lg" className="mt-8" onClick={scrollToForm}>
+              <Button variant="hero" size="lg" className="mt-8" onClick={() => setOpen2(true)}>
                 Join Our Teaching Community
               </Button>
+              <JoinTeachingCommunityDialog isOpen={open2} onClose={() => setOpen2(false)}/>
             </div>
           </div>
         </div>

@@ -28,7 +28,7 @@ import schoolBg12 from "@/assets/school-bg-12.jpg";
 import schoolBg13 from "@/assets/school-bg-13.jpg";
 import schoolBg14 from "@/assets/school-bg-14.jpg";
 import schoolBg15 from "@/assets/school-bg-15.jpg";
-
+import axios from "axios";
 
 const backgroundImages = [
   schoolBg1, schoolBg2, schoolBg3, schoolBg4, schoolBg5,
@@ -38,9 +38,19 @@ const backgroundImages = [
 
 export const HeroSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [dialogOpen, setDialogOpen] = useState(false);
-  const [dialogType, setDialogType] = useState<"school" | "parent" | "teacher" | "general">("school");
-
+const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [formData, setFormData] = useState({
+    role: "",
+    teacherName: "",
+    phone: "",
+    email: "",
+    schoolName: "",
+    state: "",
+    medium: "",
+    students: "",
+    fees: "",
+    consent: false,
+  });
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
@@ -48,7 +58,33 @@ export const HeroSection = () => {
 
     return () => clearInterval(interval);
   }, []);
-
+const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      await axios.post(
+        "https://webiosis-school-backend.onrender.com/api/save",
+        { ...formData, sheetName: "EduTransform" }
+      );
+      setStatus("success");
+      setFormData({
+        role: "",
+        teacherName: "",
+        phone: "",
+        email: "",
+        schoolName: "",
+        state: "",
+        medium: "",
+        students: "",
+        fees: "",
+        consent: false,
+      });
+      alert("Form submitted successfully!");
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+      alert("There was an error submitting the form.");
+    }
+  };
   return (
     <section className="relative min-h-screen pt-16 lg:pt-20 overflow-hidden">
       {/* Background Image with Overlay */}
@@ -115,32 +151,8 @@ export const HeroSection = () => {
     </li>
   </ul>
 
-  <div className="flex flex-col sm:flex-row gap-4">
-    <Button 
-      variant="accent" 
-      size="lg" 
-      className="font-semibold"
-      onClick={() => {
-        setDialogType("school");
-        setDialogOpen(true);
-      }}
-    >
-      Get Free Demo
-    </Button>
-    <Button 
-      variant="outline" 
-      size="lg" 
-      className="font-semibold text-accent border-accent hover:bg-accent/10"
-      onClick={() => {
-        setDialogType("school");
-        setDialogOpen(true);
-      }}
-    >
-      Explore Curriculum
-    </Button>
-  </div>
   
-  <EnquiryDialog open={dialogOpen} onOpenChange={setDialogOpen} formType={dialogType} />
+
 </div>
 
           {/* Right Form */}
@@ -148,7 +160,7 @@ export const HeroSection = () => {
             <h3 className="text-2xl font-bold text-center mb-6 text-primary">
               Give Your School The EduTransform Advantages
             </h3>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
                 <Label htmlFor="role">Role at School *</Label>
                 <Select>

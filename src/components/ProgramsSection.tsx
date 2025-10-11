@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { GraduationCap, Laptop, Microscope, Music, Palette, Lightbulb } from "lucide-react";
 import { useState } from "react";
 import { EnquiryDialog } from "@/components/EnquiryDialog";
+import { ProgramsEnquiryDialog } from "./ProgramsEnquiryDialogs";
 
 export const ProgramsSection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -116,8 +117,10 @@ export const ProgramsSection = () => {
             Explore All Programs
           </Button>
         </div>
-        
-        <EnquiryDialog open={dialogOpen} onOpenChange={setDialogOpen} formType="general" />
+        {
+          dialogOpen && <ProgramsEnquiryDialog isOpen={dialogOpen} onClose={() => setDialogOpen(false)}  programs={programs}/>
+        }
+      
       </div>
     </section>
   );

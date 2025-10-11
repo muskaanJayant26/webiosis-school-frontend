@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import studentsImage from "@/assets/hero14.avif";
 import { BookOpen, Home, Trophy } from "lucide-react";
+import InterestModal from "./InterestModal";
+import { useState } from "react";
 
 export const ConfidenceSection = () => {
   const features = [
@@ -24,6 +26,8 @@ export const ConfidenceSection = () => {
         "Students get an opportunity to showcase their skills on national platforms. This allows them to interact with students from other schools all across the country & network with them.",
     },
   ];
+
+  const [openDialog, setOpenDialog] = useState(false)
 
   return (
     <section className="py-10 bg-background">
@@ -69,11 +73,14 @@ export const ConfidenceSection = () => {
         </div>
 
         <div className="text-center">
-          <Button variant="hero" size="lg">
+          <Button variant="hero" size="lg" onClick={() => setOpenDialog(true)}>
             I'm Interested
           </Button>
         </div>
       </div>
+      {
+        openDialog && <InterestModal isOpen={openDialog} onClose={() => setOpenDialog(false)}/>
+      }
     </section>
   );
 };

@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import infrastructureImage from "@/assets/hero16.png";
 import { Database, Monitor } from "lucide-react";
-
+import React, { useState } from "react";
+import { SchoolUpgradeEnquiryDialog } from "./SchoolUpgradeEnquiryDialog";
 export const SchoolUpgradeSection = () => {
   const features = [
     {
@@ -42,7 +43,7 @@ export const SchoolUpgradeSection = () => {
         "Track student performance and school operations with actionable analytics.",
     },
   ];
-
+ const [dialogOpen, setDialogOpen] = useState(false);
   return (
     <section className="py-14 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -91,12 +92,19 @@ export const SchoolUpgradeSection = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center">
-          <Button variant="hero" size="lg">
-            I'm Interested
-          </Button>
-        </div>
+        
+           <div className="text-center">
+        <Button variant="hero" size="lg" onClick={() => setDialogOpen(true)}>
+          I'm Interested
+        </Button>
       </div>
+
+      <SchoolUpgradeEnquiryDialog
+        isOpen={dialogOpen}
+        onClose={() => setDialogOpen(false)}
+      />
+        </div>
+    
     </section>
   );
 };

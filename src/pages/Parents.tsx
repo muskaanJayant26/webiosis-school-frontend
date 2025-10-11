@@ -7,6 +7,8 @@ import { BookOpen, Smartphone, Trophy, CheckCircle2 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { ParentEnquiryDialog } from "@/components/ParentEnquiryDialog";
+import { StudentEnrollDialog } from "@/components/EnrollChildDialog";
 
 const Parents = () => {
   const scrollToForm = () => {
@@ -101,7 +103,8 @@ const Parents = () => {
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
   };
-
+ const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogOpenStudent, setDialogOpenStudent] = useState(false);
   return (
     <div className="min-h-screen">
       <Header onEnquireClick={scrollToForm} />
@@ -116,9 +119,10 @@ const Parents = () => {
             <p className="text-xl sm:text-2xl mb-8 text-primary-foreground/90">
               Empower your child's future with world-class learning experiences that build confidence and competence
             </p>
-            <Button variant="secondary" size="lg" onClick={scrollToForm}>
+            <Button variant="secondary" size="lg" onClick={()=> setDialogOpen(true)}>
               Find EduTransform Schools Near You
             </Button>
+            <ParentEnquiryDialog isOpen={dialogOpen} onClose={() => setDialogOpen(false)}/>
           </div>
         </div>
       </section>
@@ -208,10 +212,11 @@ const Parents = () => {
           variant="hero"
           size="lg"
           className="mt-10"
-          onClick={scrollToForm}
+          onClick={() => setDialogOpenStudent(true)}
         >
           Enroll Your Child Today
         </Button>
+        <StudentEnrollDialog isOpen={dialogOpenStudent} onClose={() => setDialogOpenStudent(false)} />
       </div>
     </div>
   </div>

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import teacherImage from "@/assets/hero15.png";
 import { ChevronLeft, ChevronRight, Users, Award, Smartphone, Package, Zap } from "lucide-react";
+import { TeacherEnquiryDialog } from "./TeacherEnquiryDialog";
 
 export const TeacherProgramSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -47,6 +48,7 @@ export const TeacherProgramSection = () => {
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + features.length) % features.length);
   };
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
     <section className="py-10 bg-gradient-subtle">
@@ -151,11 +153,12 @@ export const TeacherProgramSection = () => {
         </div>
 
         <div className="text-center">
-          <Button variant="hero" size="lg">
+          <Button variant="hero" size="lg" onClick={() => setDialogOpen(true)}>
             I'm Interested
           </Button>
         </div>
       </div>
+      <TeacherEnquiryDialog isOpen={dialogOpen} onClose={() => setDialogOpen(false)} />
     </section>
   );
 };
