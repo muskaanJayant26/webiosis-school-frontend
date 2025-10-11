@@ -86,10 +86,13 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    /* Prevent scrollbar from hiding and causing layout shift */
+    overflow-y: scroll;
+  }
+
   body {
     @apply bg-background text-foreground;
-    /* Prevent scrollbar from hiding when dropdowns/dialogs open */
-    scrollbar-gutter: stable;
   }
 }
 
