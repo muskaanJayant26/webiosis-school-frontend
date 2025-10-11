@@ -90,7 +90,7 @@ const AboutUs = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-background">
+      <section className="py-5 mt-5 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 mb-20">
@@ -119,63 +119,76 @@ const AboutUs = () => {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-gradient-subtle">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Our Core Values
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              The principles that guide everything we do
-            </p>
-          </div>
+   <section className=" bg-gradient-subtle">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Section Heading */}
+    <div className="text-center mb-12">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+        Our Core Values
+      </h2>
+      <p className="text-xl text-muted-foreground">
+        The principles that guide everything we do
+      </p>
+    </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <Card
-                key={index}
-                className="p-6 text-center hover:shadow-soft transition-all duration-300 animate-slide-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-16 h-16 rounded-full bg-gradient-hero flex items-center justify-center mx-auto mb-4">
-                  <value.icon className="h-8 w-8 text-primary-foreground" />
-                </div>
-                <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                <p className="text-muted-foreground text-sm">{value.description}</p>
-              </Card>
-            ))}
+    {/* Values Grid */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {values.map((value, index) => (
+        <Card
+          key={index}
+          className="p-6 bg-white rounded-lg text-center transition-transform duration-300 transform hover:-translate-y-3 hover:scale-105 hover:shadow-xl"
+          style={{ animationDelay: `${index * 0.1}s` }}
+        >
+          <div className="w-16 h-16 rounded-full bg-gradient-hero flex items-center justify-center mx-auto mb-4">
+            <value.icon className="h-8 w-8 text-primary-foreground" />
           </div>
-        </div>
-      </section>
+          <h3 className="text-xl font-bold mb-3">{value.title}</h3>
+          <p className="text-muted-foreground text-sm">{value.description}</p>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Impact Stats */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Our Impact Across India
-            </h2>
-          </div>
+   <section className="py-10 mt-5 bg-background">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl lg:text-4xl sm:text-3xl font-bold mb-4">
+        Our Impact Across India
+      </h2>
+    </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            {impact.map((stat, index) => (
-              <div
-                key={index}
-                className="text-center p-6 animate-slide-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="text-4xl sm:text-5xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-muted-foreground font-medium">{stat.label}</div>
-              </div>
-            ))}
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+      {impact.map((stat, index) => (
+        <div
+          key={index}
+          className="flex flex-col items-center text-center p-6 rounded-xl bg-card shadow-soft hover:shadow-glow transition-all duration-300 transform hover:scale-105 animate-slide-up"
+          style={{ animationDelay: `${index * 0.1}s` }}
+        >
+          {/* Optional icon container */}
+          {stat.icon && (
+            <div className="w-16 h-16 rounded-full bg-gradient-hero flex items-center justify-center mb-4">
+              <stat.icon className="h-8 w-8 text-primary-foreground" />
+            </div>
+          )}
+
+          <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
+            {stat.number}
+          </div>
+          <div className="text-sm sm:text-base text-muted-foreground font-medium">
+            {stat.label}
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Journey Timeline */}
-      <section className="py-20 bg-gradient-subtle">
+      <section className="py-10 bg-gradient-subtle">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -215,7 +228,7 @@ const AboutUs = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-background">
+      <section className="py-10 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -258,7 +271,7 @@ const AboutUs = () => {
       </section>
 
       {/* Awards & Recognition */}
-      <section className="py-20 bg-gradient-subtle">
+      <section className="py-10 bg-gradient-subtle">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -310,58 +323,60 @@ const AboutUs = () => {
       </section>
 
       {/* Our Approach */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Our Approach to Education Transformation
-              </h2>
-              <p className="text-xl text-muted-foreground">
-                A comprehensive methodology that delivers consistent results
-              </p>
-            </div>
+      <section className="py-10 bg-background">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="max-w-5xl mx-auto">
+      {/* Section Heading */}
+      <div className="text-center mb-12">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          Our Approach to Education Transformation
+        </h2>
+        <p className="text-xl text-muted-foreground">
+          A comprehensive methodology that delivers consistent results
+        </p>
+      </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Research-Backed",
-                  description:
-                    "Our curriculum and methods are based on extensive educational research and proven pedagogical frameworks.",
-                  icon: BookOpen,
-                },
-                {
-                  title: "Technology-Enabled",
-                  description:
-                    "Leveraging cutting-edge technology to enhance learning while maintaining the human touch in education.",
-                  icon: Zap,
-                },
-                {
-                  title: "Locally Relevant",
-                  description:
-                    "While maintaining international standards, we ensure content is culturally relevant and contextual to India.",
-                  icon: Globe,
-                },
-              ].map((approach, index) => (
-                <Card
-                  key={index}
-                  className="p-6 hover:shadow-soft transition-all text-center animate-fade-in"
-                  style={{ animationDelay: `${index * 0.15}s` }}
-                >
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-hero flex items-center justify-center mx-auto mb-4">
-                    <approach.icon className="h-8 w-8 text-primary-foreground" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">{approach.title}</h3>
-                  <p className="text-muted-foreground">{approach.description}</p>
-                </Card>
-              ))}
+      {/* Approach Grid */}
+      <div className="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            title: "Research-Backed",
+            description:
+              "Our curriculum and methods are based on extensive educational research and proven pedagogical frameworks.",
+            icon: BookOpen,
+          },
+          {
+            title: "Technology-Enabled",
+            description:
+              "Leveraging cutting-edge technology to enhance learning while maintaining the human touch in education.",
+            icon: Zap,
+          },
+          {
+            title: "Locally Relevant",
+            description:
+              "While maintaining international standards, we ensure content is culturally relevant and contextual to India.",
+            icon: Globe,
+          },
+        ].map((approach, index) => (
+          <Card
+            key={index}
+            className="p-6 bg-white rounded-lg text-center transition-transform duration-300 transform hover:-translate-y-3 hover:scale-105 hover:shadow-xl"
+            style={{ animationDelay: `${index * 0.15}s` }}
+          >
+            <div className="w-16 h-16 rounded-2xl bg-gradient-hero flex items-center justify-center mx-auto mb-4">
+              <approach.icon className="h-8 w-8 text-primary-foreground" />
             </div>
-          </div>
-        </div>
-      </section>
+            <h3 className="text-xl font-bold mb-3">{approach.title}</h3>
+            <p className="text-muted-foreground">{approach.description}</p>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Social Impact */}
-      <section className="py-20 bg-gradient-subtle">
+      <section className="py-10 bg-gradient-subtle">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -417,7 +432,7 @@ const AboutUs = () => {
       </section>
 
       {/* Future Vision */}
-      <section className="py-20 bg-background">
+      <section className="py-10 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">
@@ -446,20 +461,8 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero text-primary-foreground">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Join Us in Transforming Education
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto text-primary-foreground/90">
-            Be part of India's education revolution. Partner with us to bring world-class learning to your school.
-          </p>
-          <Button variant="secondary" size="lg" onClick={scrollToForm}>
-            Partner With Us
-          </Button>
-        </div>
-      </section>
+    
+      
 
       <Footer />
     </div>

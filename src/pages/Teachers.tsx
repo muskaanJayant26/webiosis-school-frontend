@@ -2,9 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import teacherImage from "@/assets/teacher-program.jpg";
-import { Smartphone, Award, Users, BookOpen, Zap, Trophy, CheckCircle2 } from "lucide-react";
-
+import teacherImage from "@/assets/hero21.png";
+import { Smartphone, Award, Users, BookOpen, Zap, Trophy, CheckCircle2,ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
 const Teachers = () => {
   const scrollToForm = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -81,6 +81,53 @@ const Teachers = () => {
     },
   ];
 
+  const testimonials = [
+    {
+      name: "Mrs. Anita Desai",
+      role: "Social Studies Teacher, Surat",
+      content:
+        "I was skeptical about technology in teaching, but the training and support changed my perspective completely. My students are more engaged than ever, and teaching has become more enjoyable.",
+    },
+    {
+      name: "Mr. Vikram Joshi",
+      role: "Math Teacher, Lucknow",
+      content:
+        "The AI assessment builder helps me create differentiated tests for different learning levels. This personalization has significantly improved my students' performance.",
+    },
+    {
+      name: "Mrs. Meera Nambiar",
+      role: "English Teacher, Kochi",
+      content:
+        "Being part of the teacher community has been invaluable. I learn something new every day from my peers, and the webinars keep me updated with the latest teaching methodologies.",
+    },
+    {
+      name: "Mr. Amit Malhotra",
+      role: "Science Teacher, Chandigarh",
+      content:
+        "I completed my Master Teacher certification last year, and it opened up leadership opportunities I never imagined. Now I mentor new teachers and contribute to curriculum development.",
+    },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto-slide every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+  const handlePrev = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+  };
+
   return (
     <div className="min-h-screen">
       <Header onEnquireClick={scrollToForm} />
@@ -103,37 +150,45 @@ const Teachers = () => {
       </section>
 
       {/* Features Grid */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Everything You Need to{" "}
-              <span className="bg-gradient-hero bg-clip-text text-transparent">
-                Teach Effectively
-              </span>
-            </h2>
+  <section className="py-10 bg-background">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Section Heading */}
+    <div className="text-center mb-12">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+        Everything You Need to{" "}
+        <span className="bg-gradient-hero bg-clip-text text-transparent">
+          Teach Effectively
+        </span>
+      </h2>
+    </div>
+
+    {/* Features Grid */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {features.map((feature, index) => (
+        <Card
+          key={index}
+          className="p-6 bg-white rounded-lg transition-transform duration-300 transform hover:-translate-y-3 hover:scale-105 hover:shadow-xl"
+          style={{ animationDelay: `${index * 0.1}s` }}
+        >
+          {/* Icon */}
+          <div className="w-12 h-12 rounded-lg bg-gradient-hero flex items-center justify-center mb-4">
+            <feature.icon className="h-6 w-6 text-primary-foreground" />
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <Card
-                key={index}
-                className="p-6 hover:shadow-soft transition-all duration-300 animate-slide-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-12 h-12 rounded-lg bg-gradient-hero flex items-center justify-center mb-4">
-                  <feature.icon className="h-6 w-6 text-primary-foreground" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+          {/* Title */}
+          <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+
+          {/* Description */}
+          <p className="text-muted-foreground">{feature.description}</p>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gradient-subtle">
+      <section className="py-10 bg-gradient-subtle">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
@@ -171,134 +226,116 @@ const Teachers = () => {
       </section>
 
       {/* Training Programs */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Continuous Professional Development
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Grow your skills and advance your career with our comprehensive training programs
-            </p>
-          </div>
+<section className="py-10 bg-background">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Section Heading */}
+    <div className="text-center mb-12">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+        Continuous Professional Development
+      </h2>
+      <p className="text-xl text-muted-foreground">
+        Grow your skills and advance your career with our comprehensive training programs
+      </p>
+    </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {training.map((program, index) => (
-              <Card
-                key={index}
-                className="p-6 hover:shadow-soft transition-all duration-300 animate-slide-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <h3 className="text-2xl font-bold mb-3 text-primary">
-                  {program.title}
-                </h3>
-                <p className="text-muted-foreground">{program.description}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+    {/* Training Programs Grid */}
+    <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      {training.map((program, index) => (
+        <Card
+          key={index}
+          className="p-6 bg-white rounded-lg transition-transform duration-300 transform hover:-translate-y-3 hover:scale-105 hover:shadow-2xl"
+          style={{
+            animationDelay: `${index * 0.1}s`,
+            perspective: "1000px",
+          }}
+          onMouseMove={(e) => {
+            const card = e.currentTarget;
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const midX = rect.width / 2;
+            const midY = rect.height / 2;
+            const rotateX = ((y - midY) / midY) * 5; // tilt up to 5 deg
+            const rotateY = ((x - midX) / midX) * 5;
+            card.style.transform = `translateY(-12px) scale(1.05) rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
+          }}
+          onMouseLeave={(e) => {
+            const card = e.currentTarget;
+            card.style.transform = "translateY(0) scale(1) rotateX(0) rotateY(0)";
+          }}
+        >
+          <h3 className="text-2xl font-bold mb-3 text-primary">
+            {program.title}
+          </h3>
+          <p className="text-muted-foreground">{program.description}</p>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-gradient-subtle">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              What Teachers Say
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                name: "Ms. Priya Sharma",
-                role: "English Teacher, Mumbai",
-                content:
-                  "The teacher app has made my life so much easier. Lesson planning that used to take hours now takes minutes. I can focus more on my students!",
-              },
-              {
-                name: "Mr. Rajesh Kumar",
-                role: "Math Teacher, Delhi",
-                content:
-                  "The training programs are exceptional. I've learned so many new techniques that have made my teaching more effective and engaging.",
-              },
-              {
-                name: "Mrs. Kavita Singh",
-                role: "Science Teacher, Bangalore",
-                content:
-                  "The AI assessment builder is a game-changer. I can create customized tests that truly measure my students' understanding.",
-              },
-            ].map((testimonial, index) => (
-              <Card key={index} className="p-6 hover:shadow-soft transition-all">
-                <p className="text-muted-foreground mb-4 italic">
-                  "{testimonial.content}"
-                </p>
-                <div className="border-t pt-4">
-                  <p className="font-bold">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* Resources & Tools */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Comprehensive Teaching Resources
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Everything you need to deliver exceptional lessons
-            </p>
-          </div>
+      <section className="py-10 bg-background">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Section Heading */}
+    <div className="text-center mb-12">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+        Comprehensive Teaching Resources
+      </h2>
+      <p className="text-xl text-muted-foreground">
+        Everything you need to deliver exceptional lessons
+      </p>
+    </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {[
-              {
-                title: "10,000+ Video Lessons",
-                description: "Subject-wise animated videos and explanations",
-              },
-              {
-                title: "Ready Lesson Plans",
-                description: "Step-by-step teaching guides for every topic",
-              },
-              {
-                title: "Assessment Bank",
-                description: "1,000s of questions with solutions",
-              },
-              {
-                title: "Activity Worksheets",
-                description: "Printable worksheets and activity guides",
-              },
-              {
-                title: "Smart Presentations",
-                description: "Interactive PPTs for classroom teaching",
-              },
-              {
-                title: "Teaching Aids",
-                description: "Visual aids, charts, and manipulatives",
-              },
-            ].map((resource, index) => (
-              <Card
-                key={index}
-                className="p-6 hover:shadow-soft transition-all text-center animate-slide-up"
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                <div className="w-12 h-12 rounded-lg bg-gradient-hero mx-auto flex items-center justify-center mb-4">
-                  <BookOpen className="h-6 w-6 text-primary-foreground" />
-                </div>
-                <h3 className="font-bold mb-2">{resource.title}</h3>
-                <p className="text-sm text-muted-foreground">{resource.description}</p>
-              </Card>
-            ))}
+    {/* Resources Grid */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      {[
+        {
+          title: "10,000+ Video Lessons",
+          description: "Subject-wise animated videos and explanations",
+        },
+        {
+          title: "Ready Lesson Plans",
+          description: "Step-by-step teaching guides for every topic",
+        },
+        {
+          title: "Assessment Bank",
+          description: "1,000s of questions with solutions",
+        },
+        {
+          title: "Activity Worksheets",
+          description: "Printable worksheets and activity guides",
+        },
+        {
+          title: "Smart Presentations",
+          description: "Interactive PPTs for classroom teaching",
+        },
+        {
+          title: "Teaching Aids",
+          description: "Visual aids, charts, and manipulatives",
+        },
+      ].map((resource, index) => (
+        <Card
+          key={index}
+          className="p-6 bg-white rounded-lg text-center transition-transform duration-300 transform hover:-translate-y-3 hover:scale-105 hover:shadow-xl"
+          style={{ animationDelay: `${index * 0.05}s` }}
+        >
+          <div className="w-12 h-12 rounded-lg bg-gradient-hero mx-auto flex items-center justify-center mb-4">
+            <BookOpen className="h-6 w-6 text-primary-foreground" />
           </div>
-        </div>
-      </section>
+          <h3 className="font-bold mb-2">{resource.title}</h3>
+          <p className="text-sm text-muted-foreground">{resource.description}</p>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Career Growth */}
-      <section className="py-20 bg-gradient-subtle">
+      <section className="py-10 bg-gradient-subtle">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
@@ -388,7 +425,7 @@ const Teachers = () => {
       </section>
 
       {/* Community & Support */}
-      <section className="py-20 bg-background">
+      <section className="py-10 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -437,69 +474,61 @@ const Teachers = () => {
         </div>
       </section>
 
-      {/* More Testimonials */}
-      <section className="py-20 bg-gradient-subtle">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              More Teacher Success Stories
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {[
-              {
-                name: "Mrs. Anita Desai",
-                role: "Social Studies Teacher, Surat",
-                content:
-                  "I was skeptical about technology in teaching, but the training and support changed my perspective completely. My students are more engaged than ever, and teaching has become more enjoyable.",
-              },
-              {
-                name: "Mr. Vikram Joshi",
-                role: "Math Teacher, Lucknow",
-                content:
-                  "The AI assessment builder helps me create differentiated tests for different learning levels. This personalization has significantly improved my students' performance.",
-              },
-              {
-                name: "Mrs. Meera Nambiar",
-                role: "English Teacher, Kochi",
-                content:
-                  "Being part of the teacher community has been invaluable. I learn something new every day from my peers, and the webinars keep me updated with the latest teaching methodologies.",
-              },
-              {
-                name: "Mr. Amit Malhotra",
-                role: "Science Teacher, Chandigarh",
-                content:
-                  "I completed my Master Teacher certification last year, and it opened up leadership opportunities I never imagined. Now I mentor new teachers and contribute to curriculum development.",
-              },
-            ].map((testimonial, index) => (
-              <Card key={index} className="p-6 hover:shadow-soft transition-all">
-                <p className="text-muted-foreground mb-4 italic leading-relaxed">
-                  "{testimonial.content}"
-                </p>
-                <div className="border-t pt-4">
-                  <p className="font-bold">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                </div>
-              </Card>
+      <section className="py-10 bg-gradient-subtle relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            More Teacher Success Stories
+          </h2>
+        </div>
+
+        {/* Carousel Wrapper */}
+        <div className="relative w-full max-w-5xl mx-auto overflow-hidden">
+          {/* Slides */}
+          <div
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{
+              transform: `translateX(-${currentIndex * 100}%)`,
+            }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="min-w-full px-4">
+                <Card className="p-6 text-center shadow-md hover:shadow-lg transition-all duration-500 bg-card/95 backdrop-blur-sm">
+                  <p className="text-muted-foreground mb-4 italic leading-relaxed">
+                    "{testimonial.content}"
+                  </p>
+                  <div className="border-t pt-4">
+                    <p className="font-bold">{testimonial.name}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  </div>
+                </Card>
+              </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero text-primary-foreground">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Ready to Elevate Your Teaching Career?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto text-primary-foreground/90">
-            Join the EduTransform community and transform the way you teach
-          </p>
-          <Button variant="secondary" size="lg" onClick={scrollToForm}>
-            Get Started Today
-          </Button>
+          {/* Left Arrow */}
+          <button
+            onClick={handlePrev}
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-green-500 hover:bg-green-600 text-white p-2 rounded-full shadow-md transition-all"
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+
+          {/* Right Arrow */}
+          <button
+            onClick={handleNext}
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-green-500 hover:bg-green-600 text-white p-2 rounded-full shadow-md transition-all"
+            aria-label="Next testimonial"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
         </div>
-      </section>
+      </div>
+    </section>
+
+
 
       <Footer />
     </div>
