@@ -167,13 +167,6 @@ const AboutUs = () => {
           className="flex flex-col items-center text-center p-6 rounded-xl bg-card shadow-soft hover:shadow-glow transition-all duration-300 transform hover:scale-105 animate-slide-up"
           style={{ animationDelay: `${index * 0.1}s` }}
         >
-          {/* Optional icon container */}
-          {stat.icon && (
-            <div className="w-16 h-16 rounded-full bg-gradient-hero flex items-center justify-center mb-4">
-              <stat.icon className="h-8 w-8 text-primary-foreground" />
-            </div>
-          )}
-
           <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
             {stat.number}
           </div>

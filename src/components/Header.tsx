@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { EnquiryDialog } from "@/components/EnquiryDialog";
 
 export const Header = ({ onEnquireClick }: { onEnquireClick: () => void }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-soft">
@@ -34,10 +36,12 @@ export const Header = ({ onEnquireClick }: { onEnquireClick: () => void }) => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button variant="accent" size="lg" onClick={onEnquireClick}>
+            <Button variant="accent" size="lg" onClick={() => setDialogOpen(true)}>
               ENQUIRE NOW
             </Button>
           </div>
+          
+          <EnquiryDialog open={dialogOpen} onOpenChange={setDialogOpen} formType="general" />
 
           {/* Mobile Menu Button */}
           <button
@@ -80,7 +84,7 @@ export const Header = ({ onEnquireClick }: { onEnquireClick: () => void }) => {
               >
                 ABOUT US
               </a>
-              <Button variant="accent" className="w-full" onClick={() => { onEnquireClick(); setMobileMenuOpen(false); }}>
+              <Button variant="accent" className="w-full" onClick={() => { setDialogOpen(true); setMobileMenuOpen(false); }}>
                 ENQUIRE NOW
               </Button>
             </nav>

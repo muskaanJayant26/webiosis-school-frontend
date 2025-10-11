@@ -1,8 +1,11 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Laptop, Microscope, Music, Palette, Lightbulb } from "lucide-react";
+import { useState } from "react";
+import { EnquiryDialog } from "@/components/EnquiryDialog";
 
 export const ProgramsSection = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
   const programs = [
     {
       icon: GraduationCap,
@@ -109,10 +112,12 @@ export const ProgramsSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="hero" size="lg">
+          <Button variant="hero" size="lg" onClick={() => setDialogOpen(true)}>
             Explore All Programs
           </Button>
         </div>
+        
+        <EnquiryDialog open={dialogOpen} onOpenChange={setDialogOpen} formType="general" />
       </div>
     </section>
   );

@@ -12,6 +12,7 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { CheckCircle2 } from "lucide-react";
 import { useState, useEffect } from "react";
+import { EnquiryDialog } from "@/components/EnquiryDialog";
 import schoolBg1 from "@/assets/school-bg-1.jpg";
 import schoolBg2 from "@/assets/school-bg-2.jpg";
 import schoolBg3 from "@/assets/school-bg-3.jpg";
@@ -37,6 +38,8 @@ const backgroundImages = [
 
 export const HeroSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogType, setDialogType] = useState<"school" | "parent" | "teacher" | "general">("school");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -113,13 +116,31 @@ export const HeroSection = () => {
   </ul>
 
   <div className="flex flex-col sm:flex-row gap-4">
-    <Button variant="accent" size="lg" className="font-semibold">
+    <Button 
+      variant="accent" 
+      size="lg" 
+      className="font-semibold"
+      onClick={() => {
+        setDialogType("school");
+        setDialogOpen(true);
+      }}
+    >
       Get Free Demo
     </Button>
-    <Button variant="outline" size="lg" className="font-semibold text-accent border-accent hover:bg-accent/10">
+    <Button 
+      variant="outline" 
+      size="lg" 
+      className="font-semibold text-accent border-accent hover:bg-accent/10"
+      onClick={() => {
+        setDialogType("school");
+        setDialogOpen(true);
+      }}
+    >
       Explore Curriculum
     </Button>
   </div>
+  
+  <EnquiryDialog open={dialogOpen} onOpenChange={setDialogOpen} formType={dialogType} />
 </div>
 
           {/* Right Form */}
