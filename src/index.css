@@ -93,8 +93,15 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    /* Prevent body shift when dropdowns/dialogs open */
+  }
+  
+  /* Prevent any shifting when dropdowns/modals open */
+  body, 
+  body > div,
+  header,
+  section {
     padding-right: 0 !important;
+    margin-right: 0 !important;
   }
 }
 
