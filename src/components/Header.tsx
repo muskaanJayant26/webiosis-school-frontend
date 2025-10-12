@@ -1,100 +1,91 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { EnquiryDialog } from "@/components/EnquiryDialog";
 import { EnquireNowForm } from "./EnquireNowForm";
 
 export const Header = ({ onEnquireClick }: { onEnquireClick: () => void }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
-  
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-soft">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+      <div className="container mx-auto px-6 sm:px-8">
+        <div className="flex items-center justify-between h-20 sm:h-[100px]">
           {/* Logo */}
-          <div className="flex items-center">
-            <a href="/" className="text-3xl font-bold bg-gradient-hero bg-clip-text text-transparent sm:text-2xl lg:text-3xl">
-              EduTransform
-            </a>
-          </div>
+          <a
+            href="/"
+            className="text-4xl sm:text-3xl font-bold bg-gradient-hero bg-clip-text text-transparent tracking-tight"
+          >
+            EduTransform
+          </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
-            <a href="/parents" className="text-base font-medium text-foreground hover:text-primary transition-colors">
-              PARENTS
-            </a>
-            <a href="/schools" className="text-base font-medium text-foreground hover:text-primary transition-colors">
-              SCHOOLS
-            </a>
-            <a href="/teachers" className="text-base font-medium text-foreground hover:text-primary transition-colors">
-              TEACHERS
-            </a>
-            <a href="/about" className="text-base font-medium text-foreground hover:text-primary transition-colors">
-              ABOUT US
-            </a>
+          <nav className="hidden lg:flex items-center gap-10">
+            {["PARENTS", "SCHOOLS", "TEACHERS", "ABOUT US"].map((item) => (
+              <a
+                key={item}
+                href={`/${item.toLowerCase().replace(" ", "")}`}
+                className="text-lg font-semibold text-foreground hover:text-primary transition-colors"
+              >
+                {item}
+              </a>
+            ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* Desktop CTA */}
           <div className="hidden lg:block">
-            <Button variant="accent" size="lg" onClick={() => setDialogOpen(true)}>
+            <Button
+              variant="accent"
+              size="lg"
+              className="text-lg px-8 py-3"
+              onClick={() => setDialogOpen(true)}
+            >
               ENQUIRE NOW
             </Button>
           </div>
-       
-      
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className="lg:hidden p-3 text-foreground"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={30} /> : <Menu size={30} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border animate-fade-in">
-            <nav className="flex flex-col gap-4">
-              <a
-                href="/parents"
-                className="text-foreground hover:text-primary font-medium transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
+          <div className="lg:hidden bg-background border-t border-border mt-2 rounded-2xl shadow-lg animate-fade-in">
+            <nav className="flex flex-col items-center gap-4 py-6 px-6 text-center">
+              {["PARENTS", "SCHOOLS", "TEACHERS", "ABOUT US"].map((item) => (
+                <a
+                  key={item}
+                  href={`/${item.toLowerCase().replace(" ", "")}`}
+                  className="text-2xl font-semibold text-foreground hover:text-primary transition-colors py-3 w-full rounded-md hover:bg-muted"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item}
+                </a>
+              ))}
+              <Button
+                variant="accent"
+                className="w-full mt-4 text-xl py-6 font-semibold"
+                onClick={() => {
+                  setDialogOpen(true);
+                  setMobileMenuOpen(false);
+                }}
               >
-                PARENTS
-              </a>
-              <a
-                href="/schools"
-                className="text-foreground hover:text-primary font-medium transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                SCHOOLS
-              </a>
-              <a
-                href="/teachers"
-                className="text-foreground hover:text-primary font-medium transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                TEACHERS
-              </a>
-              <a
-                href="/about"
-                className="text-foreground hover:text-primary font-medium transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                ABOUT US
-              </a>
-              <Button variant="accent" className="w-full" onClick={() => { setDialogOpen(true); setMobileMenuOpen(false); }}>
                 ENQUIRE NOW
               </Button>
             </nav>
           </div>
         )}
       </div>
-         {
-            dialogOpen &&  <EnquireNowForm isOpen={dialogOpen} onClose={() => setDialogOpen(false)}/>
-          }
+
+      {/* Enquiry Form Dialog */}
+      {dialogOpen && (
+        <EnquireNowForm isOpen={dialogOpen} onClose={() => setDialogOpen(false)} />
+      )}
     </header>
   );
 };
