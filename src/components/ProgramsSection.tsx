@@ -59,37 +59,37 @@ export const ProgramsSection = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-10 bg-gradient-subtle">
-      <div className="container mx-auto px-6 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl lg:text-4xl font-bold mb-6">
+    <section className="py-16 bg-gradient-subtle sm:py-10">
+      <div className="container mx-auto px-6 sm:px-4 lg:px-8">
+        <div className="text-center mb-16 sm:mb-12">
+          <h2 className="text-5xl font-bold mb-6 sm:text-3xl lg:text-4xl sm:mb-4">
             Our Comprehensive Learning Programs
           </h2>
-          <p className="text-xl sm:text-2xl lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed sm:text-xl">
             Holistic education that goes beyond textbooks to develop well-rounded individuals
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6">
           {programs.map((program, index) => (
             <Card
               key={index}
-              className="p-8 sm:p-6 hover:shadow-soft transition-all duration-300 animate-fade-in"
+              className="p-8 hover:shadow-soft transition-all duration-300 animate-fade-in sm:p-6"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-20 h-20 sm:w-16 sm:h-16 rounded-2xl bg-gradient-accent flex items-center justify-center mb-6 sm:mb-4">
-                <program.icon className="h-10 w-10 sm:h-8 sm:w-8 text-accent-foreground" />
+              <div className="w-20 h-20 rounded-2xl bg-gradient-accent flex items-center justify-center mb-6 sm:w-16 sm:h-16 sm:mb-4">
+                <program.icon className="h-10 w-10 text-accent-foreground sm:h-8 sm:w-8" />
               </div>
-              <h3 className="text-2xl sm:text-3xl lg:text-2xl font-bold mb-4">{program.title}</h3>
-              <p className="text-lg sm:text-xl lg:text-base text-muted-foreground mb-6 leading-relaxed">{program.description}</p>
+              <h3 className="text-3xl font-bold mb-4 sm:text-2xl sm:mb-3">{program.title}</h3>
+              <p className="text-xl text-muted-foreground mb-6 leading-relaxed sm:text-base sm:mb-4">{program.description}</p>
               
-              <div className="mb-6">
-                <p className="font-semibold text-base sm:text-sm text-primary mb-3">Includes:</p>
+              <div className="mb-6 sm:mb-4">
+                <p className="font-semibold text-lg text-primary mb-3 sm:text-sm sm:mb-2">Includes:</p>
                 <div className="flex flex-wrap gap-2">
                   {program.subjects.map((subject, idx) => (
                     <span
                       key={idx}
-                      className="text-sm sm:text-xs bg-muted px-4 py-2 sm:px-3 sm:py-1 rounded-full"
+                      className="text-base bg-muted px-4 py-2 rounded-full sm:text-xs sm:px-3 sm:py-1"
                     >
                       {subject}
                     </span>
@@ -98,11 +98,11 @@ export const ProgramsSection = () => {
               </div>
 
               <div className="border-t pt-6 sm:pt-4">
-                <p className="font-semibold text-base sm:text-sm mb-3">Key Highlights:</p>
+                <p className="font-semibold text-lg mb-3 sm:text-sm sm:mb-2">Key Highlights:</p>
                 <ul className="space-y-2 sm:space-y-1">
                   {program.highlights.map((highlight, idx) => (
-                    <li key={idx} className="text-base sm:text-sm text-muted-foreground flex items-center gap-3 sm:gap-2">
-                      <span className="w-2 h-2 sm:w-1.5 sm:h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                    <li key={idx} className="text-lg text-muted-foreground flex items-center gap-3 sm:text-sm sm:gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0 sm:w-1.5 sm:h-1.5"></span>
                       {highlight}
                     </li>
                   ))}

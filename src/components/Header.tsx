@@ -14,7 +14,7 @@ export const Header = ({ onEnquireClick }: { onEnquireClick: () => void }) => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="text-3xl sm:text-2xl lg:text-3xl font-bold bg-gradient-hero bg-clip-text text-transparent">
+            <a href="/" className="text-3xl font-bold bg-gradient-hero bg-clip-text text-transparent sm:text-2xl lg:text-3xl">
               EduTransform
             </a>
           </div>
