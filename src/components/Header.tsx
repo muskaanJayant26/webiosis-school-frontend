@@ -14,23 +14,23 @@ export const Header = ({ onEnquireClick }: { onEnquireClick: () => void }) => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="text-2xl lg:text-3xl font-bold bg-gradient-hero bg-clip-text text-transparent">
+            <a href="/" className="text-3xl sm:text-2xl lg:text-3xl font-bold bg-gradient-hero bg-clip-text text-transparent">
               EduTransform
             </a>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            <a href="/parents" className="text-foreground hover:text-primary font-medium transition-colors">
+            <a href="/parents" className="text-base font-medium text-foreground hover:text-primary transition-colors">
               PARENTS
             </a>
-            <a href="/schools" className="text-foreground hover:text-primary font-medium transition-colors">
+            <a href="/schools" className="text-base font-medium text-foreground hover:text-primary transition-colors">
               SCHOOLS
             </a>
-            <a href="/teachers" className="text-foreground hover:text-primary font-medium transition-colors">
+            <a href="/teachers" className="text-base font-medium text-foreground hover:text-primary transition-colors">
               TEACHERS
             </a>
-            <a href="/about" className="text-foreground hover:text-primary font-medium transition-colors">
+            <a href="/about" className="text-base font-medium text-foreground hover:text-primary transition-colors">
               ABOUT US
             </a>
           </nav>

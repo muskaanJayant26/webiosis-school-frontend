@@ -105,47 +105,47 @@ const handleSubmit = async (e: React.FormEvent) => {
           {/* Left Content */}
           {/* Left Content */}
 <div className="text-primary-foreground animate-slide-up">
-  <div className="inline-block bg-accent/20 text-accent px-4 py-1 rounded-full text-sm font-semibold mb-4">
+  <div className="inline-block bg-accent/20 text-accent px-4 py-2 rounded-full text-base sm:text-sm font-semibold mb-6">
     Trusted by 500+ Schools Across India
   </div>
 
-  <h1 className="text-3xl sm:text-4xl lg:text-4xl font-bold mb-6 leading-tight">
+  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
     Transform Your School with <span className="text-accent">Future-Ready Learning Solutions</span>
   </h1>
 
-  <p className="text-lg sm:text-xl mb-8 text-primary-foreground/90">
+  <p className="text-xl sm:text-2xl lg:text-xl mb-10 text-primary-foreground/90 leading-relaxed">
     EduTransform empowers your school community with cutting-edge technology, 
     holistic learning modules, and training programs built for 21st-century success.
   </p>
 
-  <ul className="space-y-4 mb-8">
-    <li className="flex items-start gap-3">
-      <CheckCircle2 className="h-6 w-6 mt-1 flex-shrink-0 text-accent" />
-      <span className="text-base sm:text-lg">
+  <ul className="space-y-5 mb-10">
+    <li className="flex items-start gap-4">
+      <CheckCircle2 className="h-7 w-7 sm:h-8 sm:w-8 mt-1 flex-shrink-0 text-accent" />
+      <span className="text-lg sm:text-xl lg:text-lg leading-relaxed">
         <strong>Unmatched Curriculum</strong> & Personalized At-home Learning Support
       </span>
     </li>
-    <li className="flex items-start gap-3">
-      <CheckCircle2 className="h-6 w-6 mt-1 flex-shrink-0 text-accent" />
-      <span className="text-base sm:text-lg">
+    <li className="flex items-start gap-4">
+      <CheckCircle2 className="h-7 w-7 sm:h-8 sm:w-8 mt-1 flex-shrink-0 text-accent" />
+      <span className="text-lg sm:text-xl lg:text-lg leading-relaxed">
         <strong>Super Teacher Program</strong> for Empowering Educators
       </span>
     </li>
-    <li className="flex items-start gap-3">
-      <CheckCircle2 className="h-6 w-6 mt-1 flex-shrink-0 text-accent" />
-      <span className="text-base sm:text-lg">
+    <li className="flex items-start gap-4">
+      <CheckCircle2 className="h-7 w-7 sm:h-8 sm:w-8 mt-1 flex-shrink-0 text-accent" />
+      <span className="text-lg sm:text-xl lg:text-lg leading-relaxed">
         <strong>AI-enabled Infrastructure</strong> & Digital Classroom Solutions
       </span>
     </li>
-    <li className="flex items-start gap-3">
-      <CheckCircle2 className="h-6 w-6 mt-1 flex-shrink-0 text-accent" />
-      <span className="text-base sm:text-lg">
+    <li className="flex items-start gap-4">
+      <CheckCircle2 className="h-7 w-7 sm:h-8 sm:w-8 mt-1 flex-shrink-0 text-accent" />
+      <span className="text-lg sm:text-xl lg:text-lg leading-relaxed">
         <strong>Parent Engagement Tools</strong> for Stronger School-Home Connection
       </span>
     </li>
-    <li className="flex items-start gap-3">
-      <CheckCircle2 className="h-6 w-6 mt-1 flex-shrink-0 text-accent" />
-      <span className="text-base sm:text-lg">
+    <li className="flex items-start gap-4">
+      <CheckCircle2 className="h-7 w-7 sm:h-8 sm:w-8 mt-1 flex-shrink-0 text-accent" />
+      <span className="text-lg sm:text-xl lg:text-lg leading-relaxed">
         <strong>Smart Analytics Dashboard</strong> for Data-driven Decision Making
       </span>
     </li>
@@ -156,11 +156,11 @@ const handleSubmit = async (e: React.FormEvent) => {
 </div>
 
           {/* Right Form */}
-          <Card className="p-6 sm:p-8 shadow-glow bg-card/95 backdrop-blur-sm animate-fade-in">
-            <h3 className="text-2xl font-bold text-center mb-6 text-primary">
+          <Card className="p-8 sm:p-8 shadow-glow bg-card/95 backdrop-blur-sm animate-fade-in">
+            <h3 className="text-2xl sm:text-3xl lg:text-2xl font-bold text-center mb-8 text-primary">
               Give Your School The EduTransform Advantages
             </h3>
-            <form className="space-y-4" onSubmit={handleSubmit}>
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <Label htmlFor="role">Role at School *</Label>
                 <Select>
