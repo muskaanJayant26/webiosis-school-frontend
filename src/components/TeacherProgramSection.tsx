@@ -51,10 +51,10 @@ export const TeacherProgramSection = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
-    <section className="py-10 bg-gradient-subtle">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 animate-slide-up">
-          <h2 className="text-3xl sm:text-3xl lg:text-4xl font-bold mb-4">
+    <section className="py-16 bg-gradient-subtle sm:py-10">
+      <div className="container mx-auto px-6 sm:px-4 lg:px-8">
+        <div className="text-center mb-16 animate-slide-up sm:mb-12">
+          <h2 className="text-5xl font-bold mb-6 leading-tight sm:text-3xl lg:text-4xl sm:mb-4">
             We empower your teachers with a{" "}
             <span className="bg-gradient-accent bg-clip-text text-transparent">
               SUPER TEACHER PROGRAM
@@ -77,16 +77,16 @@ export const TeacherProgramSection = () => {
               {features.map((feature, index) => (
                 <Card
                   key={index}
-                  className="p-6 hover:shadow-soft transition-all duration-300 transform hover:-translate-y-1 animate-slide-up"
+                  className="p-8 hover:shadow-soft transition-all duration-300 transform hover:-translate-y-1 animate-slide-up sm:p-6"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-accent flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="h-6 w-6 text-accent-foreground" />
+                  <div className="flex items-start gap-5 sm:gap-4">
+                    <div className="w-16 h-16 rounded-lg bg-gradient-accent flex items-center justify-center flex-shrink-0 sm:w-12 sm:h-12">
+                      <feature.icon className="h-8 w-8 text-accent-foreground sm:h-6 sm:w-6" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
-                      <p className="text-sm text-muted-foreground">
+                      <h3 className="text-2xl font-bold mb-3 sm:text-lg sm:mb-2">{feature.title}</h3>
+                      <p className="text-lg text-muted-foreground leading-relaxed sm:text-sm">
                         {feature.description}
                       </p>
                     </div>
@@ -97,19 +97,19 @@ export const TeacherProgramSection = () => {
 
             {/* Mobile View - Carousel */}
             <div className="md:hidden">
-              <Card className="p-6 shadow-soft min-h-[280px]">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-accent flex items-center justify-center flex-shrink-0">
+              <Card className="p-8 shadow-soft min-h-[320px]">
+                <div className="flex items-start gap-5 mb-6">
+                  <div className="w-16 h-16 rounded-lg bg-gradient-accent flex items-center justify-center flex-shrink-0">
                     {(() => {
                       const IconComponent = features[currentSlide].icon;
-                      return <IconComponent className="h-6 w-6 text-accent-foreground" />;
+                      return <IconComponent className="h-8 w-8 text-accent-foreground" />;
                     })()}
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold mb-2">
+                    <h3 className="text-2xl font-bold mb-3">
                       {features[currentSlide].title}
                     </h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-lg text-muted-foreground leading-relaxed">
                       {features[currentSlide].description}
                     </p>
                   </div>

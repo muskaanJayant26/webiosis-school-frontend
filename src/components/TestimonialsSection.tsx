@@ -63,14 +63,14 @@ export const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-16 bg-background relative overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-background relative overflow-hidden sm:py-16">
+      <div className="container mx-auto px-6 sm:px-4 lg:px-8">
         {/* Heading */}
-        <div className="text-center mb-12 animate-slide-up">
-          <h2 className="text-3xl sm:text-3xl lg:text-4xl font-bold mb-4">
+        <div className="text-center mb-16 animate-slide-up sm:mb-12">
+          <h2 className="text-5xl font-bold mb-6 sm:text-3xl lg:text-4xl sm:mb-4">
             What School Leaders Say
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-2xl text-muted-foreground sm:text-xl">
             Trusted by educators across the nation
           </p>
         </div>

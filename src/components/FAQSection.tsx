@@ -50,29 +50,29 @@ export const FAQSection = () => {
   ];
 
   return (
-    <section className="py-10 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 bg-background sm:py-10">
+      <div className="container mx-auto px-6 sm:px-4 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-3xl lg:text-4xl font-bold mb-4">
+          <div className="text-center mb-16 sm:mb-12">
+            <h2 className="text-5xl font-bold mb-6 sm:text-3xl lg:text-4xl sm:mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-2xl text-muted-foreground sm:text-xl">
               Everything you need to know about partnering with EduTransform
             </p>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-6 sm:space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="border rounded-lg px-6 bg-white hover:shadow-soft transition-all"
+                className="border rounded-lg px-8 bg-white hover:shadow-soft transition-all sm:px-6"
               >
-                <AccordionTrigger className="text-left font-semibold hover:no-underline">
+                <AccordionTrigger className="text-left font-semibold hover:no-underline text-xl sm:text-base">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed">
+                <AccordionContent className="text-muted-foreground leading-relaxed text-lg sm:text-base">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

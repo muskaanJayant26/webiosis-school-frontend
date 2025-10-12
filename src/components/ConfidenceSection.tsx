@@ -30,10 +30,10 @@ export const ConfidenceSection = () => {
   const [openDialog, setOpenDialog] = useState(false)
 
   return (
-    <section className="py-10 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 animate-slide-up">
-  <h2 className="text-3xl lg:text-4xl sm:text-3xl font-bold mb-4">
+    <section className="py-16 bg-background sm:py-10">
+      <div className="container mx-auto px-6 sm:px-4 lg:px-8">
+        <div className="text-center mb-16 animate-slide-up sm:mb-12">
+  <h2 className="text-5xl font-bold mb-6 leading-tight sm:text-3xl lg:text-4xl sm:mb-4">
     We ensure every student in your school becomes
     <br />
     <span className="bg-gradient-hero bg-clip-text text-transparent">
@@ -55,16 +55,16 @@ export const ConfidenceSection = () => {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="p-6 hover:shadow-soft transition-all duration-300 transform hover:-translate-y-1 animate-slide-up"
+                className="p-8 hover:shadow-soft transition-all duration-300 transform hover:-translate-y-1 animate-slide-up sm:p-6"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-hero flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="h-6 w-6 text-primary-foreground" />
+                <div className="flex items-start gap-5 sm:gap-4">
+                  <div className="w-16 h-16 rounded-lg bg-gradient-hero flex items-center justify-center flex-shrink-0 sm:w-12 sm:h-12">
+                    <feature.icon className="h-8 w-8 text-primary-foreground sm:h-6 sm:w-6" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <h3 className="text-3xl font-bold mb-3 sm:text-xl sm:mb-2">{feature.title}</h3>
+                    <p className="text-xl text-muted-foreground leading-relaxed sm:text-base">{feature.description}</p>
                   </div>
                 </div>
               </Card>
