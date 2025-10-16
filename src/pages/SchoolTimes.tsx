@@ -85,18 +85,20 @@ const SchoolTimes = () => {
       <Header onEnquireClick={() => setEnquiryOpen(true)} />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 sm:px-8">
+     <section className="pt-32 pb-20 bg-gradient-hero text-primary-foreground">
         <div className="container mx-auto text-center">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 bg-gradient-hero bg-clip-text text-transparent">
+              <div className="max-w-4xl mx-auto text-center animate-slide-up">
+         <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6">
             The School Times
           </h1>
-          <p className="text-xl sm:text-2xl md:text-3xl text-muted-foreground max-w-3xl mx-auto">
+         <p className="text-xl sm:text-2xl mb-8 text-primary-foreground/90">
             Insights, stories, and best practices from the world of education
           </p>
         </div>
+        </div>
       </section>
 
-      {/* Categories */}
+      {/* Categories
       <section className="py-8 px-6 sm:px-8 sticky top-[80px] sm:top-[96px] z-40 bg-background/95 backdrop-blur-sm border-y border-border">
         <div className="container mx-auto">
           <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
@@ -111,10 +113,10 @@ const SchoolTimes = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Featured Article */}
-      <section className="py-16 px-6 sm:px-8">
+      <section className="py-10 px-6 sm:px-8">
         <div className="container mx-auto">
           <Card className="p-8 sm:p-12 bg-card hover:shadow-xl transition-shadow">
             <div className="mb-4">
@@ -151,7 +153,7 @@ const SchoolTimes = () => {
       </section>
 
       {/* Articles Grid */}
-      <section className="py-16 px-6 sm:px-8 bg-muted/30">
+      <section className="py-10 px-6 sm:px-8 bg-muted/30">
         <div className="container mx-auto">
           <h2 className="text-4xl sm:text-5xl font-bold mb-12 text-foreground">
             Latest Articles
@@ -193,7 +195,7 @@ const SchoolTimes = () => {
       </section>
 
       {/* Newsletter */}
-      <section className="py-16 px-6 sm:px-8 bg-gradient-hero">
+      <section className="py-10 px-6 sm:px-8 bg-gradient-hero">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
             Subscribe to The School Times

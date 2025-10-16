@@ -46,19 +46,21 @@ const NEP2020 = () => {
       <Header onEnquireClick={() => setEnquiryOpen(true)} />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 sm:px-8">
-        <div className="container mx-auto text-center">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 bg-gradient-hero bg-clip-text text-transparent">
+     <section className="pt-32 pb-20 bg-gradient-hero text-primary-foreground">
+        <div className="container mx-auto ">
+          <div className="max-w-4xl mx-auto text-center animate-slide-up">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6">
             National Education Policy 2020
           </h1>
-          <p className="text-xl sm:text-2xl md:text-3xl text-muted-foreground max-w-4xl mx-auto">
+           <p className="text-xl sm:text-2xl mb-8 text-primary-foreground/90">
             Transforming India's education system for the 21st century with EduTransform's comprehensive NEP implementation framework
           </p>
+        </div>
         </div>
       </section>
 
       {/* Overview */}
-      <section className="py-16 px-6 sm:px-8">
+      <section className="py-10 px-6 sm:px-8">
         <div className="container mx-auto">
           <Card className="p-8 sm:p-12 bg-card">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-foreground">What is NEP 2020?</h2>
@@ -75,7 +77,7 @@ const NEP2020 = () => {
       </section>
 
       {/* Key Pillars */}
-      <section className="py-16 px-6 sm:px-8 bg-muted/30">
+      <section className="py-10 px-6 sm:px-8 bg-muted/30">
         <div className="container mx-auto">
           <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-foreground">
             Key Pillars of NEP 2020
@@ -93,7 +95,7 @@ const NEP2020 = () => {
       </section>
 
       {/* Implementation Steps */}
-      <section className="py-16 px-6 sm:px-8">
+      <section className="py-10 px-6 sm:px-8">
         <div className="container mx-auto">
           <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-foreground">
             Our NEP Implementation Approach
@@ -119,7 +121,7 @@ const NEP2020 = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-6 sm:px-8 bg-gradient-hero">
+      <section className="py-10 px-6 sm:px-8 bg-gradient-hero">
         <div className="container mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
             Ready to Transform Your School with NEP 2020?

@@ -86,19 +86,21 @@ const Resources = () => {
       <Header onEnquireClick={() => setEnquiryOpen(true)} />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 sm:px-8">
+    <section className="pt-32 pb-20 bg-gradient-hero text-primary-foreground">
         <div className="container mx-auto text-center">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 bg-gradient-hero bg-clip-text text-transparent">
+           <div className="max-w-4xl mx-auto text-center animate-slide-up">
+         <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6">
             Educational Resources
           </h1>
-          <p className="text-xl sm:text-2xl md:text-3xl text-muted-foreground max-w-3xl mx-auto">
+        <p className="text-xl sm:text-2xl mb-8 text-primary-foreground/90">
             Access our comprehensive library of resources to enhance teaching and learning
           </p>
+          </div>
         </div>
       </section>
 
       {/* Resource Categories */}
-      <section className="py-16 px-6 sm:px-8">
+      <section className="py-10 px-6 sm:px-8">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {resourceCategories.map((category, index) => (
@@ -114,7 +116,7 @@ const Resources = () => {
       </section>
 
       {/* Featured Resources */}
-      <section className="py-16 px-6 sm:px-8 bg-muted/30">
+      <section className="py-10 px-6 sm:px-8 bg-muted/30">
         <div className="container mx-auto">
           <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-foreground">
             Featured Resources
@@ -148,7 +150,7 @@ const Resources = () => {
       </section>
 
       {/* Webinars */}
-      <section className="py-16 px-6 sm:px-8">
+      <section className="py-10 px-6 sm:px-8">
         <div className="container mx-auto">
           <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-foreground">
             Free Weekly Webinars
