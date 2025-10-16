@@ -8,7 +8,7 @@ export const Header = ({ onEnquireClick }: { onEnquireClick: () => void }) => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background shadow-soft">
+    <header className="bg-background">
       {/* Top Bar - Main Navigation */}
       <div className="bg-primary">
         <div className="container mx-auto px-6 sm:px-8">
@@ -29,7 +29,7 @@ export const Header = ({ onEnquireClick }: { onEnquireClick: () => void }) => {
       </div>
 
       {/* Bottom Bar - Logo and Secondary Navigation */}
-      <div className="bg-card border-b border-border">
+      <div className="sticky top-0 z-50 bg-card border-b border-border shadow-soft">
         <div className="container mx-auto px-6 sm:px-8">
           <div className="flex items-center justify-between h-20 sm:h-24">
             {/* Logo */}
