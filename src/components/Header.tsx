@@ -8,8 +8,8 @@ export const Header = ({ onEnquireClick }: { onEnquireClick: () => void }) => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
-    <header className="bg-background">
-      {/* Top Bar - Main Navigation */}
+    <>
+      {/* Top Bar - Main Navigation (scrolls away) */}
       <div className="bg-primary">
         <div className="container mx-auto px-6 sm:px-8">
           <div className="flex items-center justify-end h-12 sm:h-14 gap-6 sm:gap-10">
@@ -28,7 +28,7 @@ export const Header = ({ onEnquireClick }: { onEnquireClick: () => void }) => {
         </div>
       </div>
 
-      {/* Bottom Bar - Logo and Secondary Navigation */}
+      {/* Bottom Bar - Logo and Secondary Navigation (sticky) */}
       <div className="sticky top-0 z-50 bg-card border-b border-border shadow-soft">
         <div className="container mx-auto px-6 sm:px-8">
           <div className="flex items-center justify-between h-20 sm:h-24">
@@ -97,7 +97,7 @@ export const Header = ({ onEnquireClick }: { onEnquireClick: () => void }) => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-background border-t border-border shadow-lg animate-fade-in">
+        <div className="lg:hidden bg-background border-t border-border shadow-lg animate-fade-in sticky top-[80px] sm:top-[96px] z-40">
           <nav className="flex flex-col items-center gap-4 py-6 px-6">
             {["PARENTS", "SCHOOLS", "TEACHERS", "ABOUT US"].map((item) => (
               <a
@@ -160,6 +160,6 @@ export const Header = ({ onEnquireClick }: { onEnquireClick: () => void }) => {
       {dialogOpen && (
         <EnquireNowForm isOpen={dialogOpen} onClose={() => setDialogOpen(false)} />
       )}
-    </header>
+    </>
   );
 };
