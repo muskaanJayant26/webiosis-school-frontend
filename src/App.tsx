@@ -8,6 +8,10 @@ import Parents from "./pages/Parents";
 import Schools from "./pages/Schools";
 import Teachers from "./pages/Teachers";
 import AboutUs from "./pages/AboutUs";
+import EventsPrograms from "./pages/EventsPrograms";
+import NEP2020 from "./pages/NEP2020";
+import Resources from "./pages/Resources";
+import SchoolTimes from "./pages/SchoolTimes";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,7 +27,11 @@ const App = () => (
           <Route path="/parents" element={<Parents />} />
           <Route path="/schools" element={<Schools />} />
           <Route path="/teachers" element={<Teachers />} />
-          <Route path="/about" element={<AboutUs />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/events" element={<EventsPrograms />} />
+          <Route path="/nep" element={<NEP2020 />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/times" element={<SchoolTimes />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
